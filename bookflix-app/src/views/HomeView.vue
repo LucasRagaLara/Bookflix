@@ -2,24 +2,24 @@
   <div class="home w-full h-screen">
     <!-- Menú con el logo -->
     <nav class="lg:text-2xl lg:flex lg:items-center lg:w-full lg:justify-start">
-      <div class="lg:w-full lg:mt-5 lg:ml-5">
-        <img src="../assets/icons/bookflix_azulrojo.png" alt="" class="w-[15rem]">
+      <div class="lg:w-full lg:mt-10 lg:ml-10">
+        <img src="../assets/icons/bookflix_azulrojo.png" alt="" class="w-[10rem]">
       </div>
       <font-awesome-icon class="lg:text-3xl lg:text-white lg:w-60 lg:cursor-pointer" icon="bars"/>
     </nav>
     <!-- Introducción y fondo de la página -->
     <div class="lg:flex lg:items-center lg:justify-center lg:w-full">
-        <div class="lg:flex lg:flex-col lg:gap-y-10 lg:items-center lg:justify-center lg:w-full lg:h-[40rem]">
-            <h1 class="lg:text-6xl lg:text-center font-bold lg:tracking-wider	lg:leading-normal">¡Bienvenido a tu mundo <br>de historias sin fin!</h1>
+        <div class="lg:flex lg:flex-col lg:gap-y-14 lg:items-center lg:justify-center lg:w-full lg:h-[35rem]">
+            <h1 class="lg:text-7xl lg:text-center font-bold lg:tracking-wider	lg:leading-normal">¡Bienvenido a tu mundo <br>de historias sin fin!</h1>
             <p class="lg:text-2xl lg:text-center lg:tracking-wider lg:leading-normal lg:mb-5">Descubre un mundo de lecturas en línea. <br> Explora, lee, repite: Tu viaje literario te espera.</p>
             <div class="lg:flex lg:gap-x-28 lg:mt-5">
-              <button class="lg:px-12 lg:py-4 lg:bg-[#C12C38] lg:rounded-xl lg:font-bold animation_per">Iniciar sesión</button>
-              <button class="lg:px-12 lg:py-4 lg:border-2 lg:border-[#40BFBC] lg:rounded-xl lg:font-bold animation_per">Registrarse</button>
+              <button class="lg:px-12 lg:py-4 lg:bg-[#C12C38] lg:rounded-xl animation_per">Iniciar sesión</button>
+              <button class="lg:px-12 lg:py-4 lg:border-2 lg:border-[#40BFBC] lg:rounded-xl animation_per">Registrarse</button>
             </div>
         </div>
         <!-- Imagen e fondo -->
-        <div class="lg:items-center lg:justify-center lg:w-full lg:h-[40rem]">
-            <img src="../assets/backgrounds/muchos_libros.png" alt="" class="lg:w-[90%] lg:translate-y-[-7rem] lg:translate-x-[-7rem]">
+        <div class="lg:items-center lg:justify-center lg:w-full lg:h-[50rem]">
+            <img src="../assets/backgrounds/muchos_libros.png" alt="" class="lg:w-[90%] lg:translate-y-[-5rem] lg:translate-x-[-5rem]">
         </div>
    </div>
   </div>
