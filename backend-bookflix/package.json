@@ -1,0 +1,22 @@
+{
+  "name": "backend-bookflix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:pm2": "pm2 start server.js --name backend-bookflix",
+    "stop:pm2": "pm2 stop backend-bookflix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-history-api-fallback": "^2.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pm2": "^5.3.1",
+    "serve-static": "^1.15.0"
+  }
+}
