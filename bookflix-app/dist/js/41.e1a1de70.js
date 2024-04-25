@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkbookflix_app"]=self["webpackChunkbookflix_app"]||[]).push([[41],{8041:function(n,e,o){o.r(e),o.d(e,{default:function(){return i}});var u=o(6768);const a={class:"home"},r=(0,u.Lk)("p",null,"hola",-1),t=[r];function c(n,e,o,r,c,l){return(0,u.uX)(),(0,u.CE)("div",a,t)}var l={name:"HomeView"},s=o(1241);const f=(0,s.A)(l,[["render",c]]);var i=f}}]);
+//# sourceMappingURL=41.e1a1de70.js.map
