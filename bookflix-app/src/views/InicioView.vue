@@ -13,23 +13,24 @@
                 <button class="lg:px-12 lg:py-4 border-2 border-[#40BFBC] rounded-xl px-4 py-2 animation_per">Registrarse</button>
               </div>
           </div>
+          <div>
+          </div>
           <!-- Imagen e fondo --> 
-    </div>
+      </div>
   </div>
 </template> 
 
 <script>
 import 'animate.css';
 
-export default {
-
+export default{
+  
   name: 'InicioView',
 
   data(){
   },
 
   mounted(){
-
   },
 
   computed:{

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
         <!-- Menú con el logo -->
     <nav class="lg:text-2xl lg:flex lg:items-center lg:w-full lg:justify-start flex items-center w-full justify-start absolute">
       <div class="lg:w-full lg:mt-10 lg:ml-10 w-full mt-5 ml-5">
@@ -56,6 +56,14 @@ export default {
       this.$refs.lineaActiva1_bar.classList.toggle("lineaActiva1_bar")
       this.$refs.lineaActiva2_bar.classList.toggle("lineaActiva2_bar")
       this.$refs.lineaActiva3_bar.classList.toggle("lineaActiva3_bar")
+
+      if (this.estadoMenu == true){
+        document.body.style.overflow = 'hidden';
+      } else {
+        setTimeout(() => {
+          document.body.style.overflow = 'auto';
+        }, 1000)
+      }
     },
     antes_entrada(antes){
       antes.classList.add('animate__slideInRight');
@@ -85,7 +93,6 @@ export default {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow: hidden;
   }
   body{
     color: #f1f1f1;
