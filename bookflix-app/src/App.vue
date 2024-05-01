@@ -13,9 +13,10 @@
     </nav>
     <!-- Menú con animacion -->
         <transition @before-enter="antes_entrada" @enter="entrada" @leave="salida">
-            <div class="bg-red-500 h-screen lg:w-[25rem] absolute right-0 top-0 z-[5] opacity-90 animate__animated shadow-custom w-full" v-if="estadoMenu">
+            <div class="bg-red-500 h-screen lg:w-[25rem] absolute right-0 top-0 z-[5] opacity-90 animate__animated shadow-custom  w-full" v-if="estadoMenu">
               <div class="h-32"></div>
               <ul class="flex items-start justify-center flex-col ml-12 gap-y-8 font-bold w-full">
+                <li class="relative link_animation"> <RouterLink to="/" @click="abrir_menu">INICIO</RouterLink> </li>
                 <li class="relative link_animation"> <RouterLink to="/descubre" @click="abrir_menu">DESCUBRE</RouterLink> </li>
                 <li class="relative link_animation"> <RouterLink to="/ventajas" @click="abrir_menu">VENTAJAS</RouterLink></li>
                 <li class="relative link_animation"> <RouterLink to="/experiencias" @click="abrir_menu">EXPERIENCIAS</RouterLink></li>
@@ -98,6 +99,7 @@ export default {
     color: #f1f1f1;
     font-size: 1.5rem;
     font-family: "Nunito", sans-serif;
+    overflow: hidden !important;
   }
 
   // animaciones para el menu bar
@@ -145,7 +147,7 @@ export default {
         bottom: 0; 
         left: 0;
         background-color: #f1f1f1;  
-        transition: width 0.5s ease-in-out, visibility 0s linear 0.5s; 
+        transition: width 0.3s ease-in-out, visibility 0s linear 0.5s; 
         visibility: hidden;
       }
 
@@ -153,15 +155,19 @@ export default {
       &:focus::after {
         visibility: visible;
         width: 100%;
-        transition: width 0.5s ease-in-out, visibility 0s; 
+        transition: width 0.3s ease-in-out, visibility 0s; 
       }
     }
   }
 
   // Formato Tablet
   @media (max-width: 1000px){
+    body{
+      overflow: auto !important;
+    }
     .home{
-      background: url('./assets/backgrounds/home_pers.png')!important;
+      background-image: linear-gradient(to right bottom, #252233, #212139, #1e1c2f) !important;
+      background-size: cover;
     }
 // translate modificado del menu responsive
     .lineaActiva1_bar{
@@ -174,8 +180,12 @@ export default {
 
 // Formato móvil
   @media (max-width: 800px){
+    body{
+      overflow: auto !important;
+    }
     .home{
-      background: url('./assets/backgrounds/home_pers.png') !important;
+      background-image: linear-gradient(to right bottom, #252233, #212139, #1e1c2f) !important;
+      background-size: cover;
     }
   // translate modificado del menu responsive
     .lineaActiva1_bar{
