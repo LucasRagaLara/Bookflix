@@ -1,5 +1,5 @@
 <template>
-  <div class="home w-full h-screen lg:pt-28">
+  <div class="home w-full min-h-screen lg:pt-28">
     <!-- Menú con el logo -->
       <!-- Introducción y fondo de la página -->
       <div class="lg:justify-center lg:w-full items-center justify-center flex flex-col">
