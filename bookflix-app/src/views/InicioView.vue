@@ -1,8 +1,11 @@
 <template>
   <div class="home w-full min-h-screen lg:pt-28">
     <!-- Menú con el logo -->
+    <div class="flex w-[60%] absolute right-0 top-0">
+      <particlesComponent/>
+    </div>
       <!-- Introducción y fondo de la página -->
-      <div class="lg:justify-start lg:w-full lg:h-[60rem] h-screen items-center justify-center flex">
+      <div class="lg:justify-start lg:w-full lg:h-[60rem] h-screen items-center justify-center flex relative z-3">
           <div class="lg:w-[45%] flex flex-col items-center justify-center w-full">
               <h1 class="lg:text-7xl lg:mb-12 text-center font-bold tracking-wider leading-normal text-3xl mb-20">¡Bienvenido a tu mundo <br>de historias sin fin!</h1>
               <p class="lg:text-2xl lg:text-center lg:mb-2 tracking-wider leading-normal text-justify w-[90%] mx-auto mb-10"><strong>Descubre</strong> un mundo de lecturas en línea.</p>
@@ -20,35 +23,22 @@
   </div>
 </template> 
 
-<script>
-import 'animate.css';
+<script lang="ts">
+import { defineComponent } from 'vue';
+import particlesComponent from '@/components/particlesComponent.vue'; // Asegúrate de que la ruta es correcta
 
-export default{
-  
-  name: 'InicioView',
-
-  data(){
-  },
-
-  mounted(){
-  },
-
-  computed:{
-
-  },
-
-  methods:{
+export default defineComponent({
+  name: 'HomePage',
+  components: {
+    particlesComponent
   }
-}
-
+});
 </script>
-
-
 
 <style lang="scss" scoped>
 // Clase general que engloba la página
   .home {
-    background: url('../assets/backgrounds/home_pers.png');
+    background: url('../assets/backgrounds/home.png');
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -61,5 +51,4 @@ export default{
     transform: scale(1.1);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.50); 
   }
-
 </style>
