@@ -166,9 +166,8 @@
 </template>
 
 <script>
-import AtroposComponent from 'atropos/element';
 import Atropos from 'atropos';
-customElements.define('atropos-component', AtroposComponent);
+
     export default {
         data(){
             return{
@@ -189,15 +188,15 @@ customElements.define('atropos-component', AtroposComponent);
             commonOrigin: true
             });
             console.log(this.myAtropos)
-        }
+        },
     }
 </script>
 
-<style lang="sass">
-atropos-component
-    border-radius: 100%
-    overflow: hidden !important
-    padding: 0
+<style lang="sass" scoped>
+    atropos-component
+        border-radius: 100%
+        overflow: hidden !important
+        padding: 0
     .atropos, .my-atropos
         // padding: 1.5%
         border-radius: 100%

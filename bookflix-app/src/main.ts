@@ -10,6 +10,11 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Particles from "@tsparticles/vue3";
 // import { loadSlim } from "@tsparticles/slim";
 import { loadFull } from "tsparticles";
+
+import AtroposComponent from 'atropos/element';
+
+customElements.define('atropos-component', AtroposComponent);
+
 library.add(faBars)
 
 const app = createApp(App)
