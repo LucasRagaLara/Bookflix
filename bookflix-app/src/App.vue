@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-        <!-- Menú con el logo -->
+  <div class="w-full">
+        <!-- Menú con el logo -->    
     <nav class="lg:text-2xl lg:flex lg:items-center lg:w-full lg:justify-start flex items-center w-full justify-start absolute">
       <div class="lg:w-full lg:mt-10 lg:ml-10 w-full mt-5 ml-5">
         <img src="./assets/icons/bookflix_azulrojo.png" alt="" class="lg:w-[10rem] w-[6rem] cursor-pointer" @click="ir_inicio">
@@ -13,7 +13,7 @@
     </nav>
     <!-- Menú con animacion -->
         <transition @before-enter="antes_entrada" @enter="entrada" @leave="salida">
-            <div class="bg-red-500 h-screen lg:w-[25rem] absolute right-0 top-0 z-[5] opacity-90 animate__animated shadow-custom  w-full" v-if="estadoMenu">
+            <div class="bg-red-500 h-screen lg:w-[25rem] absolute right-0 top-0 z-[5] opacity-90 animate__animated shadow-custom w-full" v-if="estadoMenu">
               <div class="h-32"></div>
               <ul class="flex items-start justify-center flex-col ml-12 gap-y-8 font-bold w-full">
                 <li class="relative link_animation"> <RouterLink to="/" @click="abrir_menu">INICIO</RouterLink> </li>
@@ -167,7 +167,7 @@ export default {
     }
     .home{
       background-image: linear-gradient(to right bottom, #252233, #212139, #1e1c2f) !important;
-      background-size: cover;
+      background-size: cover !important;
     }
 // translate modificado del menu responsive
     .lineaActiva1_bar{
@@ -183,6 +183,7 @@ export default {
     body{
       overflow: auto !important;
     }
+
     .home{
       background-image: linear-gradient(to right bottom, #252233, #212139, #1e1c2f) !important;
       background-size: cover;

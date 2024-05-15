@@ -1,10 +1,10 @@
 <template>
-    <div class="xl:mt-10 xl:flex-row xl:flex xl:items-center xl:justify-center xl:min-h-[60vh] xl:w-[90%] xl:gap-x-20">
+    <div class="mt-10 xl:flex-row xl:flex xl:items-center xl:justify-center xl:min-h-[60vh] xl:w-[90%] xl:gap-x-20">
         <atropos-component
         activeOffset="100"
         class="atroposElement">
-            <div class="atropos my-atropos xl:w-full xl:h-[45rem] lg:rounded-xl lg:flex lg:flex-col lg:items-center lg:justify-center lg:bg-[#006470] lg:shadow-xl lg:relative">
-                <img src="../assets/tonos_azulrojo/tarjeta_azul/cita_azul.png" alt="" class="w-20 absolute top-5 left-7">
+            <div class="atropos my-atropos xl:w-full xl:h-[45rem] rounded-xl flex flex-col lg:items-center lg:justify-center bg-[#006470] shadow-xl relative w-[90%] h-[42rem] lg:mx-0 mx-auto lg:mb-0 mb-10">
+                <img src="../assets/tonos_azulrojo/tarjeta_azul/cita_azul.png" alt="" class="w-20 lg:absolute top-5 left-7 lg:ml-0 lg:mt-0 ml-6 my-3">
                 <div class="atropos-scale">
                     <!-- rotate container (required) -->
                     <div class="atropos-rotate">
@@ -46,9 +46,9 @@
         <atropos-component
         activeOffset="100"
         class="atroposElement">
-            <div class="atropos my-atropos xl:w-full xl:h-[45rem] lg:rounded-xl lg:flex lg:flex-col lg:items-center lg:justify-center lg:bg-[#531318] lg:shadow-xl lg:relative">
+            <div class="atropos my-atropos xl:w-full xl:h-[45rem] rounded-xl flex flex-col lg:items-center lg:justify-center bg-[#531318] shadow-xl relative w-[90%] h-[42rem] lg:mx-0 mx-auto lg:mb-0 mb-10">
 
-                <img src="../assets/tonos_azulrojo/tarjeta_roja/cita_roja.png" alt="" class="w-20 absolute top-5 left-7">
+                <img src="../assets/tonos_azulrojo/tarjeta_roja/cita_roja.png" alt="" class="w-20 lg:absolute top-5 left-7 lg:ml-0 lg:mt-0 ml-6 my-3">
 
                 <div class="atropos-scale">
                     <!-- rotate container (required) -->
@@ -94,9 +94,9 @@
         activeOffset="100"
         class="atroposElement">
 
-            <div class="atropos my-atropos xl:w-full xl:h-[45rem] lg:rounded-xl lg:flex lg:flex-col lg:items-center lg:justify-center lg:bg-[#07372D] lg:shadow-xl lg:relative">
+            <div class="atropos my-atropos xl:w-full xl:h-[45rem] rounded-xl flex flex-col lg:items-center lg:justify-center bg-[#07372D] shadow-xl relative w-[90%] h-[42rem] lg:mx-0 mx-auto lg:mb-0 mb-10">
 
-                <img src="../assets/tonos_azulrojo/tarjeta_verde/cita_verde.png" alt="" class="w-20 absolute top-5 left-7" data-atropos-offset="2">
+                <img src="../assets/tonos_azulrojo/tarjeta_verde/cita_verde.png" alt="" class="w-20 lg:absolute top-5 left-7 lg:ml-0 lg:mt-0 ml-6 my-3" data-atropos-offset="2">
 
                 <div class="atropos-scale">
                     <!-- rotate container (required) -->
@@ -104,7 +104,7 @@
                         <div class="atropos-inner">
 
                             <div class="items-center justify-center flex">
-                                <p class="text-justify w-[85%] font-bold text-2xl mb-8" data-atropos-offset="2">Como lector, he encontrado aquí una fuente interminable de aventuras futuristas. Las recomendaciones siempre dan en el clavo y cada lectura es una experiencia emocionante.</p>
+                                <p class="text-justify w-[85%] font-bold text-2xl lg:mb-8 mb-10" data-atropos-offset="2">Como lector, he encontrado aquí una fuente interminable de aventuras futuristas. Las recomendaciones siempre dan en el clavo y cada lectura es una experiencia emocionante.</p>
                             </div>
                             <!-- <div class="ocean">
                                 <div class="wave"></div>
