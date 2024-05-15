@@ -18,11 +18,11 @@
                     <!-- rotate container (required) -->
                         <div class="atropos-rotate">
                         <!-- inner container (required) -->
-                            <div class="atropos-inner lg:w-[15rem] lg:h-[15rem] rounded-full flex flex-col p-5 items-center justify-center">
-                                <img src="../assets/icons/computer.png" class="w-[10rem] h-[10rem]" data-atropos-offset="2.5">
+                            <div class="atropos-inner lg:w-[15rem] lg:h-[15rem] rounded-full flex flex-col p-5 items-center justify-center w-[12rem] h-[12rem]">
+                                <img src="../assets/icons/computer.png" class="lg:w-[10rem] w-[8rem]" data-atropos-offset="2.5">
                         <!-- put your custom content here -->
                                 <div data-atropos-offset="8" class="atropos-button-wrap">
-                                    <RouterLink to="/" class="font-bold trackind-wide">EXPLORA</RouterLink>
+                                    <RouterLink to="/" class="font-bold trackind-wide xl:text-2xl text-[1rem]">EXPLORA</RouterLink>
                                 </div>
                             </div>
                         </div>
@@ -43,11 +43,11 @@
                     <!-- rotate container (required) -->
                         <div class="atropos-rotate">
                         <!-- inner container (required) -->
-                            <div class="atropos-inner lg:w-[15rem] lg:h-[15rem] rounded-full flex flex-col p-5 items-center justify-center">
-                                <img src="../assets/icons/corazon.png" class="w-[10rem] h-[10rem]" data-atropos-offset="4">
+                            <div class="atropos-inner lg:w-[15rem] lg:h-[15rem] rounded-full flex flex-col p-5 items-center justify-center w-[12rem] h-[12rem]">
+                                <img src="../assets/icons/corazon.png" class="lg:w-[10rem] w-[8rem]" data-atropos-offset="4">
                         <!-- put your custom content here -->
                                 <div data-atropos-offset="8" class="atropos-button-wrap">
-                                    <RouterLink to="/" class="font-bold trackind-wide">DISFRUTA</RouterLink>
+                                    <RouterLink to="/" class="font-bold trackind-wide xl:text-2xl text-[1rem]">DISFRUTA</RouterLink>
                                 </div>
                             </div>
                         </div>
@@ -68,11 +68,11 @@
                     <!-- rotate container (required) -->
                         <div class="atropos-rotate">
                         <!-- inner container (required) -->
-                            <div class="atropos-inner lg:w-[15rem] lg:h-[15rem] rounded-full flex flex-col p-5 items-center justify-center">
-                                <img src="../assets/icons/movil.png" class="w-[10rem] h-[10rem] pb-3" data-atropos-offset="4">
+                            <div class="atropos-inner lg:w-[15rem] lg:h-[15rem] rounded-full flex flex-col p-5 items-center justify-center w-[12rem] h-[12rem]">
+                                <img src="../assets/icons/movil.png" class="lg:w-[10rem] w-[8rem] lg:pb-3" data-atropos-offset="4">
                         <!-- put your custom content here -->
                                 <div data-atropos-offset="8" class="atropos-button-wrap">
-                                    <RouterLink to="/" class="font-bold trackind-wide">ACCEDE</RouterLink>
+                                    <RouterLink to="/" class="font-bold trackind-wide xl:text-2xl text-[1rem]">ACCEDE</RouterLink>
                                 </div>
                             </div>
                         </div>
@@ -97,11 +97,11 @@
                     <!-- rotate container (required) -->
                         <div class="atropos-rotate">
                         <!-- inner container (required) -->
-                            <div class="atropos-inner lg:w-[15rem] lg:h-[15rem] rounded-full flex flex-col p-5 items-center justify-center">
-                                <img src="../assets/icons/escudo.png" class="w-[10rem] h-[10rem] pb-3" data-atropos-offset="4">
+                            <div class="atropos-inner lg:w-[15rem] lg:h-[15rem] rounded-full flex flex-col p-5 items-center justify-center w-[12rem] h-[12rem]">
+                                <img src="../assets/icons/escudo.png" class="lg:w-[10rem] w-[8rem] lg:pb-3" data-atropos-offset="4">
                         <!-- put your custom content here -->
                                 <div data-atropos-offset="8" class="atropos-button-wrap">
-                                    <RouterLink to="/" class="font-bold trackind-wide">PROTEGE</RouterLink>
+                                    <RouterLink to="/" class="font-bold trackind-wide xl:text-2xl text-[1rem]">PROTEGE</RouterLink>
                                 </div>
                             </div>
                         </div>
@@ -122,11 +122,11 @@
                     <!-- rotate container (required) -->
                         <div class="atropos-rotate">
                         <!-- inner container (required) -->
-                            <div class="atropos-inner lg:w-[15rem] lg:h-[15rem] rounded-full flex flex-col p-5 items-center justify-center">
-                                <img src="../assets/icons/calendario.png" class="w-[10rem] h-[10rem] pb-3" data-atropos-offset="4">
+                            <div class="atropos-inner lg:w-[15rem] lg:h-[15rem] rounded-full flex flex-col p-5 items-center justify-center w-[12rem] h-[12rem]">
+                                <img src="../assets/icons/calendario.png" class="lg:w-[10rem] w-[8rem] lg:pb-3" data-atropos-offset="4">
                         <!-- put your custom content here -->
                                 <div data-atropos-offset="8" class="atropos-button-wrap">
-                                    <RouterLink to="/" class="font-bold trackind-wide">ORGANIZA</RouterLink>
+                                    <RouterLink to="/" class="font-bold trackind-wide xl:text-2xl text-[1rem]">ORGANIZA</RouterLink>
                                 </div>
                             </div>
                         </div>
@@ -147,11 +147,11 @@
                     <!-- rotate container (required) -->
                         <div class="atropos-rotate">
                         <!-- inner container (required) -->
-                            <div class="atropos-inner lg:w-[15rem] lg:h-[15rem] rounded-full flex flex-col p-5 items-center justify-center">
-                                <img src="../assets/icons/commitment.png" class="w-[10rem] h-[10rem]" data-atropos-offset="4">
+                            <div class="atropos-inner lg:w-[15rem] lg:h-[15rem] rounded-full flex flex-col p-5 items-center justify-center w-[12rem] h-[12rem]">
+                                <img src="../assets/icons/commitment.png" class="lg:w-[10rem] w-[8rem]" data-atropos-offset="4">
                         <!-- put your custom content here -->
                                 <div data-atropos-offset="8" class="atropos-button-wrap">
-                                    <RouterLink to="/" class="font-bold trackind-wide">COMUNICA</RouterLink>
+                                    <RouterLink to="/" class="font-bold trackind-wide xl:text-2xl text-[1rem]">COMUNICA</RouterLink>
                                 </div>
                             </div>
                         </div>  
@@ -166,7 +166,7 @@
 </template>
 
 <script>
-import Atropos from 'atropos';
+// import Atropos from 'atropos';
 
     export default {
         data(){
@@ -175,19 +175,19 @@ import Atropos from 'atropos';
             }
         },
         mounted(){
-            this.myAtropos = Atropos({
-            el: '.my-atropos',
-            activeOffset: 100,
-            shadow: false,
-            shadowOffset: 0,
-            shadowScale: 0,
-            highlight: true,
-            rotateXMax: 30,
-            rotateYMax: 30,
-            rotateLock: true,
-            commonOrigin: true
-            });
-            console.log(this.myAtropos)
+            // this.myAtropos = Atropos({
+            // el: '.my-atropos',
+            // activeOffset: 100,
+            // shadow: false,
+            // shadowOffset: 0,
+            // shadowScale: 0,
+            // highlight: true,
+            // rotateXMax: 30,
+            // rotateYMax: 30,
+            // rotateLock: true,
+            // commonOrigin: true
+            // });
+            // console.log(this.myAtropos)
         },
     }
 </script>
