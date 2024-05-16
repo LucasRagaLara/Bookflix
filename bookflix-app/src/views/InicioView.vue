@@ -12,8 +12,8 @@
               <p class="lg:text-2xl lg:text-center tracking-wider leading-normal text-justify w-[90%] mx-auto mb-5">
               <strong>Explora</strong>, lee, repite: Tu viaje literario te espera.</p>
               <div class="lg:gap-x-28 flex mt-5 h-32 w-full items-center justify-center gap-x-12">
-                <button class="lg:px-12 lg:py-4 bg-[#C12C38] rounded-xl animation_per px-4 py-2">Iniciar sesión</button>
-                <button class="lg:px-12 lg:py-4 border-2 border-[#40BFBC] rounded-xl px-4 py-2 animation_per">Registrarse</button>
+                <routerLink to="/login" class="lg:px-12 lg:py-4 bg-[#C12C38] rounded-xl animation_per px-4 py-2">Iniciar sesión</routerLink>
+                <routerLink to="/registro" class="lg:px-12 lg:py-4 border-2 border-[#40BFBC] rounded-xl px-4 py-2 animation_per">Registrarse</routerLink>
               </div>
           </div>
           <div>

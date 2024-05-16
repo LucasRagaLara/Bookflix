@@ -25,6 +25,18 @@ const routes = [
     path: '/contacto',
     name: 'Contacto',
     component: () => import('../views/ContactoView.vue')
+  },
+  {
+    path: '/registro',
+    name: 'Registro',
+    component: () => import('../views/sesionView.vue'),
+    props: { rutaDefinida: 'registro'}
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/sesionView.vue'),
+    props: { rutaDefinida: 'login'}
   }
 ]
 
