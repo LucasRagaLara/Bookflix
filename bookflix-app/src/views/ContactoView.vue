@@ -33,27 +33,15 @@
                     <h1 class="xl:text-[#7A1C24] text-3xl mt-5 font-bold">El tema del mensaje es...</h1>
 
                     <div class="flex flex-wrap xl:w-full mt-6 w-[90%]">
-
-                        <div class="xl:w-1/3 w-1/2">
-                            <button type="button" class="border-2 border-[#C7C7C7] text-[#C7C7C7] py-3 px-8 rounded-xl mb-6 lg:w-[75%] hover:bg-[#E53544] hover:text-white hover:border-[#E53544] transition-all duration-300 ease-in-out transform lg:hover:scale-110 hover:scale-105">Cuenta</button>
+                        <div class="xl:w-1/3 w-1/2" v-for="boton in botones" :key="boton.valor">
+                            <button 
+                                type="button" 
+                                class="border-2 border-[#C7C7C7] text-[#C7C7C7] py-3 px-8 rounded-xl mb-6 lg:w-[75%] hover:bg-[#E53544] hover:text-white hover:border-[#E53544] transition-all duration-300 ease-in-out transform lg:hover:scale-110 hover:scale-105"
+                                :class="{ 'boton_seleccionado': botonSeleccionado === boton.valor }"
+                                @click="botonSeleccionado = boton.valor">
+                                {{ boton.texto }}
+                            </button>
                         </div>
-
-                        <div class="xl:w-1/3 w-1/2">
-                            <button type="button" class="border-2 border-[#C7C7C7] text-[#C7C7C7] py-3 px-8 rounded-xl mb-6 lg:w-[75%] flex items-center justify-center hover:bg-[#E53544]  hover:text-white hover:border-[#E53544] transition-all duration-300 ease-in-out transform lg:hover:scale-110 hover:scale-105">Sugerencias</button>
-                        </div>
-
-                        <div class="xl:w-1/3 w-1/2">
-                            <button type="button" class="border-2 border-[#C7C7C7] text-[#C7C7C7] py-3 px-8 rounded-xl mb-6 w-[75%] flex items-center justify-center hover:bg-[#E53544]  hover:text-white hover:border-[#E53544] transition-all duration-300 ease-in-out transform lg:hover:scale-110 hover:scale-105">Errores</button>
-                        </div>
-
-                        <div class="xl:w-1/3 w-1/2">
-                            <button type="button" class="border-2 border-[#C7C7C7] text-[#C7C7C7] py-3 px-8 rounded-xl mb-6 w-[75%] flex items-center justify-center hover:bg-[#E53544]  hover:text-white hover:border-[#E53544] transition-all duration-300 ease-in-out transform lg:hover:scale-110 hover:scale-105">Conexión</button>
-                        </div>
-
-                        <div class="xl:w-1/3 w-1/2">
-                            <button type="button" class="border-2 border-[#C7C7C7] text-[#C7C7C7] py-3 px-8 rounded-xl mb-6 w-[75%] flex items-center justify-center hover:bg-[#E53544]  hover:text-white hover:border-[#E53544] transition-all duration-300 ease-in-out transform lg:hover:scale-110 hover:scale-105">Otro</button>
-                        </div>
-
                     </div>
 
                     <input type="text" placeholder="Nombre" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] mb-12 text-[#9ca3af] w-[90%]" required minlength="3" maxlength="45">
@@ -87,7 +75,15 @@
 
         data(){
             return{
-                textarea_contact: ''
+                textarea_contact: '',
+                botones: [
+                    { texto: 'Cuenta', valor: 'Cuenta' },
+                    { texto: 'Sugerencias', valor: 'Sugerencias' },
+                    { texto: 'Errores', valor: 'Errores' },
+                    { texto: 'Conexión', valor: 'Conexión' },
+                    { texto: 'Otro', valor: 'Otro' }
+                ],
+                botonSeleccionado: null
             }
         },
         computed:{
@@ -129,7 +125,7 @@
     textarea{
         resize: none;
     }
-    button:focus{
+    .boton_seleccionado{
         background-color:#E53544;
         border: 2px solid #E53544;
         color: #fff;
