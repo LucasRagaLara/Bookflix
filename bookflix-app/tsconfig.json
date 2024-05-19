@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "target": "es5",
-    "module": "esnext",
+    "target": "ESNext",
+    "module": "nodeNext",
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
-    "moduleResolution": "node",
+    "moduleResolution": "nodeNext",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
