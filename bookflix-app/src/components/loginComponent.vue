@@ -1,12 +1,19 @@
 <template>
-    <div class="home w-full min-h-screen flex flex-col items-center xl:pt-20 pt-28">
+    <div class="home w-full min-h-screen flex flex-col items-center xl:pt-28">
         <div class="xl:flex xl:flex-row w-full items-center justify-center flex-col z-5 ">
 
-            <div class="xl:w-[35%] xl:h-[60rem] border-4 border-r-0 rounded-l-xl border-[#40BFBC] shadow-lg shadow-left shadow-top shadow-bottom shadow-[#40BFBC] bg-[#212139]">
+            <div v-if="responsive" class="w-[95%] mx-auto">
+                <h1 class="xl:text-4xl text-center tracking-wider leading-normal font-bold text-3xl my-5 w-full">
+                    ¡Bienvenido de nuevo!<span class="text-[#E53544]"> Inicia sesión</span> para continuar explorando
+                </h1>
+            </div>
+
+            <div class="lg:w-[35%] lg:h-[60rem] border-4 border-r-0 rounded-l-xl border-[#40BFBC] shadow-lg shadow-left shadow-top shadow-bottom shadow-[#40BFBC] bg-[#212139] w-[90%] lg:mx-0 mx-auto"
+            v-else>
                 <div>
                     <img src="../assets/icons/bookmark.png" alt="" class="w-[64px] ml-12 mb-5">
                 </div>
-                <h1 class="xl:text-4xl text-center tracking-wider leading-normal font-bold pt-4 text-3xl xl:mb-6 mb-6">
+                <h1 class="lg:text-4xl text-center tracking-wider leading-normal font-bold pt-4 text-3xl lg:mb-6 mb-6">
                     ¡Bienvenido de nuevo!<span class="text-[#E53544]"> Inicia sesión</span> para continuar explorando
                 </h1>
 
@@ -15,26 +22,33 @@
                 </div>
             </div>
 
-            <div class="xl:w-[35%] xl:h-[60rem] xl:bg-[#f1f1f1] rounded-r-xl xl:pl-12 pl-4 w-[90%] mx-auto xl:m-0 border-4 border-l-0 shadow-lg shadow-right shadow-top shadow-bottom shadow-[#40BFBC] border-[#40BFBC]">
-                <div class="flex flex-row items-end justify-end pt-6 pr-6">
-                    <routerLink to="/login"  class="rounded-l-2xl px-5 py-3 text-[#fff] bg-[#CD5D66] text-sm w-[15%] text-center font-bold cursor-default">Login</routerLink>
-                    <routerLink to="/registro" class="rounded-r-2xl px-5 py-3 text-[#fff] bg-[#C12C38] text-sm w-[15%] text-center transition duration-300 hover:bg-red-900 font-bold">Registrarse</routerLink>
+            <div class="lg:w-[35%] lg:h-[60rem] lg:bg-[#f1f1f1] rounded-r-xl lg:pl-12 pl-4 w-[90%] mx-auto lg:m-0 lg:border-4 lg:border-l-0 lg:shadow-lg lg:shadow-right lg:shadow-top lg:shadow-bottom lg:shadow-[#40BFBC] lg:border-[#40BFBC]">
+                <div class="flex flex-row lg:items-end lg:justify-end pt-6 lg:pr-6 items-center justify-center">
+                    <routerLink to="/login"  class="rounded-l-2xl px-5 py-3 text-[#fff] bg-[#CD5D66] text-lg lg:w-[15%] text-center font-bold cursor-default w-[50%] botones-middle">Login</routerLink>
+                    <routerLink to="/registro" class="rounded-r-2xl px-5 py-3 text-[#fff] bg-[#C12C38] text-lg lg:w-[15%] text-center transition duration-300 hover:bg-red-900 font-bold w-[50%] botones-middle">Registrarse</routerLink>
                 </div>  
 
-                <form action="/login" method="POST" class="mt-6 flex flex-col w-[75%] h-[50rem] ml-10 justify-center">
+                <form action="/login" method="POST" class="lg:mt-6 flex flex-col lg:w-[75%] w-[90%] lg:h-[54rem] lg:ml-10 justify-center mt-10">
                     
-                    <div class="flex flex-col mb-12 items-center justify-center w-full">
+                    <div class="flex flex-col mb-12 items-center justify-center w-full items-center justify-center mx-auto" v-if="responsive">
+                        <div class="bg-white rounded-full p-4">
+                            <img src="../assets/icons/leyendo.png" alt="" class="w-[164px]">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col mb-12 items-center justify-center w-full" v-else>
                         <img src="../assets/icons/leyendo.png" alt="" class="w-[164px]">
                     </div>
 
+
                     <div class="flex flex-col mb-12">
                         <label for="email" class="lg:text-2xl text-[#E53544] font-bold mb-6">E-MAIL</label>
-                        <input type="email" placeholder="Introduce tu e-mail" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] w-[90%] input-custom" required minlength="3" maxlength="45">
+                        <input type="email" placeholder="Introduce tu e-mail" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" required minlength="3" maxlength="45">
                     </div>
 
                     <div class="flex flex-col mb-12">
                         <label for="password" class="lg:text-2xl text-[#E53544] font-bold mb-6">PASSWORD</label>
-                        <input type="password" placeholder="Introduce la contraseña" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] w-[90%] input-custom" required minlength="3" maxlength="45">
+                        <input type="password" placeholder="Introduce la contraseña" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" required minlength="3" maxlength="45">
                     </div>
 
                     <!-- <div class="flex items-center gap-x-3">
@@ -45,7 +59,7 @@
                         </p>
                     </div> -->
 
-                    <button type="submit" class="xl:w-[30%] border-red-500 bg-[#C12C38] py-4 xl:mt-12 xl:mb-0 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-110 font-bold w-[60%] mt-8 mb-8 xl:mx-0 mx-auto">Iniciar sesión</button>
+                    <button type="submit" class="xl:w-[30%] border-red-500 bg-[#C12C38] py-4 xl:mt-12 xl:mb-0 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-110 font-bold w-[60%] mt-8 mb-8 xl:mx-0 mx-auto boton-registro">Iniciar sesión</button>
 
                 </form>
             </div>
@@ -56,20 +70,38 @@
 </template>
   
 <script>
-  
-  export default {
-        data(){
-            return{
-                isChecked: false
-            }
-        },
-        computed:{
+    
+import { mapState, mapMutations } from 'vuex'
 
-        },
+export default {
 
-        methods:{
+    data(){
+        return{
         }
+    },
+
+    computed: {
+        ...mapState(['responsive'])
+    },
+
+    methods: {
+        ...mapMutations(['ESTADO_RESPONSIVE']),
+
+        comprobarResponsive(){
+            const comprobar = window.innerWidth <= 1050; 
+            this.ESTADO_RESPONSIVE(comprobar)
+        }
+    },
+
+    mounted(){
+        this.comprobarResponsive();
+        window.addEventListener('resize', this.comprobarResponsive);
+    },
+
+    beforeUnmount() {
+      window.removeEventListener('resize', this.comprobarResponsive);
     }
+}
 </script>
   
 <style scoped>
@@ -98,11 +130,21 @@
         color: #7A1C24;
     }
 
+    @media (max-width: 1750px){
+        .boton-registro{
+            width: 95%;
+        }
+        .botones-middle{
+            width: 45%;
+        }
+    }
+
     @media (max-width: 800px){
-        input-custom:focus{
-        width: 90%;
+        .input-custom:focus{    
+        width: 95%;
         color: #fff;
         }
     }
+
 </style>
   

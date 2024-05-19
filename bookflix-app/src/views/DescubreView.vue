@@ -153,12 +153,16 @@ export default {
       cursor: pointer;
       padding: 1.2%;
       margin: -1.5% 2%;
+      width: 2rem;
+      height: 2rem;
       color: #f1f1f1;
       border-radius: 50%;
       background-color: #E53544;
       transition: transform 0.3s ease-in-out;
     @media (max-width: 767px) {
       padding: 6%;
+      width: 2.5rem;
+      height: 2.5rem;
     }
 
     @media (max-width: 1367px) {
