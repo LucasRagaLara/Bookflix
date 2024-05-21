@@ -37,6 +37,21 @@ const routes = [
     name: 'Login',
     component: () => import('../views/sesionView.vue'),
     props: { rutaDefinida: 'login'}
+  },
+  {
+    path: '/perfil/:id',
+    name: 'Perfil',
+    component: () => import('../views/SeleccionarUserView.vue'),
+  },
+  {
+    path: '/editar-perfil/:id',
+    name: 'editar-perfil',
+    component: () => import('../views/EditarPerfilView.vue'),
+  },
+  {
+    path: '/cambiar-imagen/:id',
+    name: 'cambiar-imagen',
+    component: () => import('../views/CambiarImagenView.vue'),
   }
 ]
 
