@@ -5,7 +5,7 @@
       <div class="lg:w-full lg:mt-10 lg:ml-10 w-full mt-5 ml-5">
         <img src="./assets/icons/bookflix_azulrojo.png" alt="" class="lg:w-[10rem] w-[6rem] cursor-pointer" @click="ir_inicio">
       </div>  
-      <div class="menu z-10" @click="abrir_menu">
+      <div class="menu z-10" @click="abrir_menu"  v-if="!esRutaExcluida">
         <span class="linea_bar" ref="lineaActiva1_bar"></span>
         <span class="linea2_bar" ref="lineaActiva2_bar"></span>
         <span class="linea3_bar" ref="lineaActiva3_bar"></span>
@@ -47,7 +47,11 @@ export default {
   },
 
   computed:{
-
+    esRutaExcluida() {
+      return this.$route.path.includes('/editar-perfil')||
+             this.$route.path.includes('/seleccionar-imagen') ||
+             this.$route.path.includes('/cambiar-imagen')
+      }
   },
 
   methods:{
@@ -99,7 +103,7 @@ export default {
     color: #f1f1f1;
     font-size: 1.5rem;
     font-family: "Nunito", sans-serif;
-    overflow: hidden !important;
+    overflow: hidden;
   }
 
   // animaciones para el menu bar
