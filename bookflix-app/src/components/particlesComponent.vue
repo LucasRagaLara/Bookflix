@@ -22,14 +22,16 @@ export default defineComponent({
     data() {
     return {
       particlesOptions1: particlesConfig,
-      particlesOptions2: particlesConfig2
+      particlesOptions2: particlesConfig2,
+      container: ''
     };
   },
   name: 'particlesComponent',
 
   methods: {
       async particlesLoaded(container: any) {
-        console.log("Particles container loaded", container);
+        this.container = container
+        // console.log("Particles container loaded", container);
       }
     },
   mounted(){

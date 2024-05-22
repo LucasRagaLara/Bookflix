@@ -55,7 +55,6 @@ import { mapMutations, mapState} from 'vuex';
         methods:{
             ...mapMutations(['GUARDAR_PERFIL_EDITANDO', 'RESETEAR_EDICION']),
             nuevoPerfil(){
-                console.log("aquí crearemos el nuevo perfil")
                 this.RESETEAR_EDICION()
                 this.$router.push({name: 'editar-perfil', params: {id: this.perfiles.length + 1}});
             },
