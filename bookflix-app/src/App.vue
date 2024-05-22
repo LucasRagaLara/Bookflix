@@ -103,7 +103,7 @@ export default {
     color: #f1f1f1;
     font-size: 1.5rem;
     font-family: "Nunito", sans-serif;
-    overflow: hidden;
+    overflow: hidden !important;
   }
 
   // animaciones para el menu bar
