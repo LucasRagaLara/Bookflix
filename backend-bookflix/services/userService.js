@@ -1,5 +1,5 @@
-const { registrarUsuarioDB } = require('../modules/db/users');
-const { encriptarPassword } = require('../modules/encrypt_passwod');
+const { registrarUsuarioDB, comprobarUsuarioDB } = require('../modules/db/users');
+const { encriptarPassword, desencriptarPassword } = require('../modules/encrypt_passwod');
 
 async function registrarNuevoUsuario(nombre_user, email_user, password_user) {
     try{
@@ -11,10 +11,22 @@ async function registrarNuevoUsuario(nombre_user, email_user, password_user) {
     }
 };
 
-async function autentificarUsuario(nombre_user, email_user, password) {
+async function autentificarUsuario(email_user,  password_user) {
 
     try{
+        const usuario = await comprobarUsuarioDB(email_user)
+        if (usuario){
+            const password_encriptada = usuario.password
+            const comprobarPassword = await desencriptarPassword(password_encriptada, password_user);
+            if (comprobarPassword){
+                return usuario;
+            }else{
+                return false;
+            }
 
+        }else{
+            return false;
+        }
 
     }catch (error){
         console.error(error)

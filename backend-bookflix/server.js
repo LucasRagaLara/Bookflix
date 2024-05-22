@@ -26,7 +26,7 @@ app.use(serveStatic(path.join(__dirname, '../bookflix-app/dist')));
 // ruta de entrada para vue
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../bookflix-app/dist', 'index.html'));
-  });
+});
 
 const port = process.env.PORT || 3000;
 
