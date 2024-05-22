@@ -68,7 +68,6 @@ import {mapState, mapActions} from 'vuex';
         },
         created(){
             const comprobar = this.perfiles.find((usuario => usuario.id == this.$route.params.id))
-            console.log(comprobar)
             if (!comprobar && !this.nuevoPerfil){
                 this.crearPerfil();
             }

@@ -1,13 +1,13 @@
 <template>
     <div class="home w-full min-h-screen flex flex-col items-center xl:pt-28">
         <div class="lg:flex lg:flex-row w-full items-center justify-center flex-col z-5 ">
-
+            <!-- Si es responsive se muestra este -->
             <div v-if="responsive" class="w-[95%] mx-auto">
                 <h1 class="xl:text-4xl text-center tracking-wider leading-normal font-bold text-3xl my-5 w-full">
                     ¡Registrate <span class="text-[#E53544]">gratis</span> y explora todo nuestro contenido!
                 </h1>
             </div>
-
+            <!-- Si no es responsive -->
             <div class="lg:w-[35%] lg:h-[60rem] border-4 border-r-0 rounded-l-xl border-[#40BFBC] shadow-lg shadow-left shadow-top shadow-bottom shadow-[#40BFBC] bg-[#212139] w-[90%] lg:mx-0 mx-auto"
             v-else>
                 <div>
@@ -21,28 +21,28 @@
                     <img src="../assets/backgrounds/muchos_libros.png" alt="" class="w-[80%]">
                 </div>
             </div>
-
+            <!-- Rutas login-Registro -->
             <div class="lg:w-[35%] lg:h-[60rem] lg:bg-[#f1f1f1] rounded-r-xl lg:pl-12 pl-4 w-[90%] mx-auto lg:m-0 lg:border-4 lg:border-l-0 lg:shadow-lg lg:shadow-right lg:shadow-top lg:shadow-bottom lg:shadow-[#40BFBC] lg:border-[#40BFBC]">
                 <div class="flex flex-row lg:items-end lg:justify-end pt-6 lg:pr-6 items-center justify-center">
                     <routerLink to="/login"  class="rounded-l-2xl px-5 py-3 text-[#fff] bg-[#C12C38] text-lg lg:w-[15%] text-center transition duration-300 hover:bg-red-900 font-bold w-[50%] botones-middle">Login</routerLink>
                     <routerLink to="/registro" class="rounded-r-2xl px-5 py-3 text-[#fff] bg-[#CD5D66] text-lg lg:w-[15%] text-center font-bold cursor-default w-[50%] botones-middle">Registrarse</routerLink>
                 </div>  
-
-                <form action="/registrarse" method="POST" class="lg:mt-6 flex flex-col lg:w-[75%] w-[90%] lg:h-[54rem] lg:ml-10 justify-center mt-10">
+                <!-- Formulario de registro -->
+                <form @submit.prevent="registrarse" class="lg:mt-6 flex flex-col lg:w-[75%] w-[90%] lg:h-[54rem] lg:ml-10 justify-center mt-10">
                     
                     <div class="flex flex-col mb-12">
                         <label for="nombre" class="text-2xl text-[#E53544] font-bold mb-6">NOMBRE</label>
-                        <input type="text" placeholder="Introduce tu nombre" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" required minlength="3" maxlength="45">
+                        <input type="text" placeholder="Introduce tu nombre" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" v-model="nombre" required minlength="3" maxlength="45">
                     </div>
 
                     <div class="flex flex-col mb-12">
                         <label for="email" class="text-2xl text-[#E53544] font-bold mb-6">E-MAIL</label>
-                        <input type="email" placeholder="Introduce tu e-mail" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" required minlength="3" maxlength="45">
+                        <input type="email" placeholder="Introduce tu e-mail" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" v-model="email" required minlength="3" maxlength="45">
                     </div>
 
                     <div class="flex flex-col mb-12">
                         <label for="password" class="text-2xl text-[#E53544] font-bold mb-6">PASSWORD</label>
-                        <input type="password" placeholder="Introduce la contraseña" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" required minlength="3" maxlength="45">
+                        <input type="password" placeholder="Introduce la contraseña" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" v-model="password" required minlength="3" maxlength="45">
                     </div>
 
                     <div class="flex items-center gap-x-3 w-full lg:text-2xl text-[1rem] lg:mb-0 mb-5">
@@ -65,14 +65,21 @@
   
 
 <script>
-    
+    import axios from 'axios';
     import { mapState, mapMutations } from 'vuex'
-    
+    import Swal from 'sweetalert2'
+
     export default {
     
         data(){
             return{
-                isChecked:false
+                isChecked:false,
+                nombre: '',
+                email: '',
+                password: '',
+                validarPassword: true,
+                validarEmail: true,
+                validarNombre: true
             }
         },
     
@@ -82,13 +89,117 @@
     
         methods: {
             ...mapMutations(['ESTADO_RESPONSIVE']),
-    
+            
+            validacionPassword(){
+                const contieneNumero = /\d/.test(this.password);
+                const contieneMayuscula = /[A-Z]/.test(this.password);
+                const contieneMinuscula = /[a-z]/.test(this.password);
+                this.validarPassword = contieneNumero && contieneMayuscula && contieneMinuscula;
+                return this.validarPassword;
+            },
+
+            validacionNombre(){
+                const regex = /^[a-zA-Z\s]+$/;
+                this.validarNombre = regex.test(this.nombre);
+                return this.validarNombre;            
+            },
+
+            validacionEmail(){
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                this.validarEmail = regex.test(this.email);
+                return this.validarEmail;
+            },
+
+            async registrarse(){
+                // array que almacena el número de errores
+                const errores = []
+
+                // comprobacion de los datos
+
+                 if (!this.validacionNombre()) {
+                    errores.push('El nombre no es válido, solo puede contener letras y espacios');
+                }
+                
+                if (!this.validacionEmail()) {
+                    errores.push('El email no es válido');
+                }
+
+                if (!this.validacionPassword()) {
+                    errores.push('El password no es válido, debe contener una Mayúscula, una minúscula y un número');
+                }
+                // Si hay errores. Sale el error con el problema.
+                if (errores.length > 0) {
+                    Swal.fire({
+                    title: 'Errores de Validación',
+                    html: errores.map(error => `<p style="text-align: left; margin: 0;">${error}</p>`).join(''),
+                    icon: 'error',
+                    confirmButtonText: 'Continuar',
+                    confirmButtonColor: "#E53544",
+                    customClass: {
+                        popup: 'swal-wide',
+                        confirmButton: 'swal-confirm-button'
+                    }
+                    });
+                } else {
+                    try {
+                        const enviar_datos = await axios.post('/api/users/registrarse', {
+                            nombre: this.nombre,
+                            email: this.email,
+                            password: this.password
+                        });
+                        // Si se devuelve un true del backend
+                        if (enviar_datos.data.success) {
+                            Swal.fire({
+                            title: '¡Ya puedes ir a Iniciar sesión!',
+                            text: enviar_datos.data.mensaje,
+                            icon: 'success',
+                            confirmButtonText: 'Continuar',
+                            confirmButtonColor: "#E53544",
+                            customClass: {
+                                popup: 'swal-wide',
+                                confirmButton: 'swal-confirm-button'
+                            }
+                            }).then((redireccion) => {
+                                if (redireccion.isConfirmed){
+                                    this.$router.push('/login');
+                                }
+                            });
+                        // Si devuelve un false
+                        } else {
+                            Swal.fire({
+                            title: 'Error',
+                            text: 'Hubo un problema con el registro',
+                            icon: 'error',
+                            confirmButtonText: 'Continuar',
+                            confirmButtonColor: "#E53544",
+                            customClass: {
+                                popup: 'swal-wide',
+                                confirmButton: 'swal-confirm-button'
+                            }
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'Error al procesar la solicitud',
+                            icon: 'error',
+                            confirmButtonText: 'Continuar',
+                            customClass: {
+                                popup: 'swal-wide',
+                                confirmButton: 'swal-confirm-button'
+                            }
+                        });
+                        console.log(error);
+                    }
+                }
+            },
+            // Comprueba si la web es responsive para actualizar el valor
             comprobarResponsive(){
                 const comprobar = window.innerWidth <= 1050; 
                 this.ESTADO_RESPONSIVE(comprobar)
             }
         },
-    
+        
         mounted(){
             this.comprobarResponsive();
             window.addEventListener('resize', this.comprobarResponsive);
