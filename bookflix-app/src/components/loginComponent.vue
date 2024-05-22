@@ -28,7 +28,7 @@
                     <routerLink to="/registro" class="rounded-r-2xl px-5 py-3 text-[#fff] bg-[#C12C38] text-lg lg:w-[15%] text-center transition duration-300 hover:bg-red-900 font-bold w-[50%] botones-middle">Registrarse</routerLink>
                 </div>  
 
-                <form action="/login" method="POST" class="lg:mt-6 flex flex-col lg:w-[75%] w-[90%] lg:h-[54rem] lg:ml-10 justify-center mt-10">
+                <form @submit.prevent="login" class="lg:mt-6 flex flex-col lg:w-[75%] w-[90%] lg:h-[54rem] lg:ml-10 justify-center mt-10">
                     
                     <div class="flex flex-col mb-12 items-center justify-center w-full items-center justify-center mx-auto" v-if="responsive">
                         <div class="bg-white rounded-full p-4">
@@ -43,12 +43,12 @@
 
                     <div class="flex flex-col mb-12">
                         <label for="email" class="lg:text-2xl text-[#E53544] font-bold mb-6">E-MAIL</label>
-                        <input type="email" placeholder="Introduce tu e-mail" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" required minlength="3" maxlength="45">
+                        <input type="email" placeholder="Introduce tu e-mail" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" required minlength="3" maxlength="45" v-model="email">
                     </div>
 
                     <div class="flex flex-col mb-12">
                         <label for="password" class="lg:text-2xl text-[#E53544] font-bold mb-6">PASSWORD</label>
-                        <input type="password" placeholder="Introduce la contraseña" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" required minlength="3" maxlength="45">
+                        <input type="password" placeholder="Introduce la contraseña" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" required minlength="3" maxlength="45" v-model="password">
                     </div>
 
                     <!-- <div class="flex items-center gap-x-3">
@@ -70,13 +70,16 @@
 </template>
   
 <script>
-    
+import axios from 'axios';
 import { mapState, mapMutations } from 'vuex'
+import Swal from 'sweetalert2'
 
 export default {
 
     data(){
         return{
+            email: '',
+            password: ''
         }
     },
 
@@ -86,20 +89,62 @@ export default {
 
     methods: {
         ...mapMutations(['ESTADO_RESPONSIVE']),
-
         comprobarResponsive(){
             const comprobar = window.innerWidth <= 1050; 
             this.ESTADO_RESPONSIVE(comprobar)
-        }
-    },
+        },
+        async login(){
+            try{
+                const enviar_datos = await axios.post('/api/users/loguearse', {
+                    email: this.email,
+                    password: this.password
+                });
+                this.email = '';
+                this.password = '';
+                console.log(enviar_datos.data)
+                // Si se devuelve un true del backend
+                if (enviar_datos.data.success) {
+                    console.log(enviar_datos.data.success)
+                    const id = enviar_datos.data.mensaje.id
+                    this.$router.push({name: 'Perfil', params: { id: id }});
+                
+                // Si devuelve un false
+                } else {
+                    console.log("Entra en el false")
+                    Swal.fire({
+                    title: 'Error',
+                    text: 'El correo o el password no coinciden',
+                    icon: 'error',
+                    confirmButtonText: 'Continuar',
+                    confirmButtonColor: "#E53544",
+                    customClass: {
+                        popup: 'swal-wide',
+                        confirmButton: 'swal-confirm-button'
+                    }
+                    });
+                }
+            } catch(error) {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Error al procesar la solicitud',
+                    icon: 'error',
+                    confirmButtonText: 'Continuar',
+                    customClass: {
+                        popup: 'swal-wide',
+                        confirmButton: 'swal-confirm-button'
+                    }
+                });
+                console.log(error);
+            }
+        },
+        mounted(){
+            this.comprobarResponsive();
+            window.addEventListener('resize', this.comprobarResponsive);
+        },
 
-    mounted(){
-        this.comprobarResponsive();
-        window.addEventListener('resize', this.comprobarResponsive);
-    },
-
-    beforeUnmount() {
-      window.removeEventListener('resize', this.comprobarResponsive);
+        beforeUnmount() {
+        window.removeEventListener('resize', this.comprobarResponsive);
+        },
     }
 }
 </script>

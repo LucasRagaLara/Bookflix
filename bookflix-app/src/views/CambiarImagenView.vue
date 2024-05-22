@@ -60,10 +60,10 @@ import {mapState} from 'vuex';
             },
         },
         mounted(){
-            document.body.style.overflow = 'auto';
+            document.body.style.cssText += 'overflow: auto !important;';
         },
         beforeUnmount(){
-            document.body.style.overflow = 'hidden';
+            document.body.style.cssText += 'overflow: hidden !important;';
         },
     }
 
