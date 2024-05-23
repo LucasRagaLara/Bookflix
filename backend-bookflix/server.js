@@ -14,7 +14,12 @@ app.use(bodyParser.json());
 
 // RUTAS
 const usersRouter = require('./routes/users');
+const imagenesRouter = require('./routes/images');
+const perfilesRouter = require('./routes/perfiles')
+
 app.use('/api/users', usersRouter);
+app.use('/api/imagenes', imagenesRouter);
+app.use('/api/perfiles', perfilesRouter);
 
 // reescritura del historial
 app.use(history());
@@ -22,6 +27,9 @@ app.use(history());
 
 // Sirve archivos estáticos
 app.use(serveStatic(path.join(__dirname, '../bookflix-app/dist')));
+
+// Sirve las imágenes
+app.use(express.static(path.join(__dirname, 'public')));
 
 // ruta de entrada para vue
 app.get('*', (req, res) => {

@@ -1,4 +1,5 @@
 const { autentificarUsuario, registrarNuevoUsuario } = require('../services/userService');
+const {generarToken } = require('../modules/cookies');
 
 async function registrar(req, res){
     try{
@@ -23,8 +24,8 @@ async function autentificar(req, res){
         let email_user = email.trim();
         const usuario = await autentificarUsuario(email_user,  password_user);
         if (usuario){
-            const id = usuario.id
-            res.status(200).json({success: true, mensaje: {id: id}});
+            const token = generarToken(usuario.id);
+            res.status(200).json({success: true, mensaje: {token: token, id:  usuario.id}});
         }else {
             res.status(200).json({success: false, mensaje: 'Revisa tu email o contraseña'})
         }
