@@ -42,16 +42,19 @@ const routes = [
     path: '/perfil/:id',
     name: 'Perfil',
     component: () => import('../views/SeleccionarUserView.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/editar-perfil/:id',
     name: 'editar-perfil',
     component: () => import('../views/EditarPerfilView.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/cambiar-imagen/:id',
     name: 'cambiar-imagen',
     component: () => import('../views/CambiarImagenView.vue'),
+    meta: { requiresAuth: true }
   }
 ]
 
@@ -59,5 +62,18 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem('token');
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!token) {
+      next('/login');
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+});
 
 export default router
