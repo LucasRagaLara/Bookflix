@@ -51,16 +51,25 @@ import {mapState} from 'vuex';
                 return this.lista_titulos[indice_titulo] ? this.lista_titulos[indice_titulo].nombre : '';
             },
             imagen_seleccionada(imagen_sel){
-                if (!this.perfilEditando){
-                    this.nuevoPerfil.imagen = imagen_sel.imagen
-                }else {
-                    this.perfilEditando.imagen = imagen_sel.imagen
+                if (Object.keys(this.perfilEditando).length !== 0) {
+                    console.log("ahora es del perfil, al modificarlo hara put")
+                    this.$store.commit('ACTUALIZAR_IMAGEN_PERFIL', { perfilId: this.perfilEditando.id, nuevaImagen: imagen_sel.imagen });
+                    this.$store.commit('GUARDAR_PERFIL_EDITANDO', { ...this.perfilEditando, imagen: imagen_sel.imagen });
+                } else {
+                    console.log("es del nuevo perfil, por que perfilEditando sigue siendo {} y te entrará en agregar")
+                    console.log("lo que paso para inicializar el nuevo perfil", {...this.nuevoPerfil, imagen: imagen_sel.imagen})
+                    this.$store.commit('INICIALIZAR_PERFIL', { ...this.nuevoPerfil, imagen: imagen_sel.imagen });
                 }
-                this.$router.push(`/editar-perfil/${this.$route.params.id}`)
-            },
+                this.$router.push({ path: `/editar-perfil/${this.$route.params.id}`, replace: true });
+                }
         },
         mounted(){
             document.body.style.cssText += 'overflow: auto !important;';
+
+            const imagenes = localStorage.getItem('imagenes');
+            if (imagenes){
+                this.$store.commit('SET_IMAGENES_PERFILES', JSON.parse(imagenes))
+            }
         },
         beforeUnmount(){
             document.body.style.cssText += 'overflow: hidden !important;';

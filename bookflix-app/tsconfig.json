@@ -43,8 +43,4 @@
   "exclude": [
     "node_modules"
   ],
-  "scripts": {
-    "clean": "rimraf ./dist",
-    "build": "npm run clean && tsc"
-  }
 }

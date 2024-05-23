@@ -104,9 +104,13 @@ export default {
                 console.log(enviar_datos.data)
                 // Si se devuelve un true del backend
                 if (enviar_datos.data.success) {
-                    console.log(enviar_datos.data.success)
-                    const id = enviar_datos.data.mensaje.id
-                    this.$router.push({name: 'Perfil', params: { id: id }});
+                    const { token, id } = enviar_datos.data.mensaje;
+                    console.log(token)
+                    console.log(id)
+                    localStorage.setItem('token', token);
+                    localStorage.setItem('userId', id);
+
+                    this.$router.push({ name: 'Perfil', params: { id } });
                 
                 // Si devuelve un false
                 } else {
