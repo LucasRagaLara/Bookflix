@@ -30,7 +30,7 @@
 
 <script>
 import 'animate.css';
-
+import Swal from 'sweetalert2';
 export default {
 
   name: 'HomeView',
@@ -43,7 +43,18 @@ export default {
   },
 
   mounted(){
+    const popupCookie = localStorage.getItem('popupCookie');
 
+    if (!popupCookie){
+      Swal.fire({
+        title: 'Política de Cookies',
+        text: 'Este sitio web utiliza cookies para garantizar que obtenga la mejor experiencia en nuestro sitio web.',
+        icon: 'info',
+        confirmButtonText: 'Aceptar',
+        allowOutsideClick: false 
+      });
+    }
+    localStorage.setItem('popupCookie', 'true');
   },
 
   computed:{

@@ -39,6 +39,24 @@ const routes = [
     props: { rutaDefinida: 'login'}
   },
   {
+    path: '/aviso-legal',
+    name: 'aviso',
+    component: () => import('../views/politicasView.vue'),
+    props: { rutaDefinida: 'aviso'}
+  },
+  {
+    path: '/cookies',
+    name: 'cookies',
+    component: () => import('../views/politicasView.vue'),
+    props: { rutaDefinida: 'cookies'}
+  },
+  {
+    path: '/privacidad',
+    name: 'privacidad',
+    component: () => import('../views/politicasView.vue'),
+    props: { rutaDefinida: 'privacidad'}
+  },
+  {
     path: '/perfil/:id',
     name: 'Perfil',
     component: () => import('../views/SeleccionarUserView.vue'),
@@ -55,7 +73,16 @@ const routes = [
     name: 'cambiar-imagen',
     component: () => import('../views/CambiarImagenView.vue'),
     meta: { requiresAuth: true }
-  }
+  },
+  {
+    path: '/404',
+    name: 'NotFound',
+    component: () => import('../views/NotFoundView.vue'),
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/404',
+  },
 ]
 
 const router = createRouter({
