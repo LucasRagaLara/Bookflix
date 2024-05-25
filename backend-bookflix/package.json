@@ -19,6 +19,7 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.9.7",
+    "nodemailer": "^6.9.13",
     "pm2": "^5.3.1",
     "serve-static": "^1.15.0"
   }
