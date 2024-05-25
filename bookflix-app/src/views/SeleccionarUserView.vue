@@ -67,7 +67,6 @@ import Swal from 'sweetalert2';
                             text: 'Ya tienes creado el máximo de perfiles permitido',
                             icon: 'error',
                             confirmButtonText: 'Continuar',
-                            confirmButtonColor: "#E53544",
                             customClass: {
                                 popup: 'swal-wide',
                                 confirmButton: 'swal-confirm-button'

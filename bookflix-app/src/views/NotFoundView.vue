@@ -40,7 +40,7 @@
   <style scoped>
   .home {
     background-image: url("../assets/backgrounds/experiencias.png");
-    background-size: cover;
+    background-size: 100% 100vh;
     background-repeat: no-repeat;
   }
   

@@ -1,12 +1,12 @@
 <template>
-    <div class="mt-10 xl:flex-row xl:flex xl:items-center xl:justify-center xl:min-h-[60vh] xl:w-[90%] xl:gap-x-20">
+    <div class="mt-10 xl:flex-row xl:flex xl:items-center xl:justify-center xl:min-h-[60vh] xl:w-full xl:gap-x-28">
         <atropos-component
         activeOffset="100"
         class="atroposElement">
             <div class="atropos my-atropos xl:w-full xl:h-[45rem] rounded-xl flex flex-col lg:items-center lg:justify-center bg-[#006470] shadow-xl relative w-[90%] h-[42rem] lg:mx-0 mx-auto lg:mb-0 mb-10">
                 <img src="../assets/tonos_azulrojo/tarjeta_azul/cita_azul.png" alt="" class="w-20 lg:absolute top-5 left-7 lg:ml-0 lg:mt-0 ml-6 my-3">
                 <div class="atropos-scale">
-                    <!-- rotate container (required) -->
+                    <!-- rotate container (required) -->    
                     <div class="atropos-rotate">
                         <div class="atropos-inner">
                             <div class="items-center justify-center flex">
@@ -184,7 +184,7 @@ export default {
 <style lang="scss" scoped>
 
     atropos-component{
-        width: 20%;
+        width: 23%;
     }
 
 

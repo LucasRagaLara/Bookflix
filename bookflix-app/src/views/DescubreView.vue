@@ -4,20 +4,20 @@
       <!-- Introducción y fondo de la página -->
       <div class="lg:justify-center lg:w-full lg:mb-0 md:mb-0 items-center justify-center flex flex-col mb-10">
         <h1 class="lg:text-5xl md:text-4xl mb-8 text-center font-bold tracking-wider leading-normal">TUS <span class="text-[#E53544]">CLÁSICOS FAVORITOS</span> AL ALCANCE </h1>
-        <h3 class="lg:text-center lg:w-full lg:text-3xl md:w-[95%] md:text-center md:text-3xl mb-6 font-bold tracking-wider leading-normal w-[90%] text-xl">EXPLORA NUESTRA COLECCIÓN EN LÍNEA Y REDESCUBRE LAS HISTORIAS QUE HAN PERDURADO EN EL TIEMPO</h3>
-        <h3 class="lg:text-3xl lg:text-center lg:w-full md:text-3xl font-bold tracking-wider leading-normal w-[90%] text-xl">¡PREPARÁTE PARA SUMERGIRTE EN LA MAGIA DE LA LITERATURA!</h3>
+        <h3 class="lg:text-center lg:w-full lg:text-2xl md:w-[95%] md:text-center md:text-3xl mb-6 font-bold tracking-wider leading-normal w-[90%] text-xl">EXPLORA NUESTRA COLECCIÓN EN LÍNEA Y REDESCUBRE LAS HISTORIAS QUE HAN PERDURADO EN EL TIEMPO</h3>
+        <h3 class="lg:text-2xl lg:text-center lg:w-full md:text-3xl font-bold tracking-wider leading-normal w-[90%] text-xl">¡PREPARÁTE PARA SUMERGIRTE EN LA MAGIA DE LA LITERATURA!</h3>
       </div>
                 <!-- Slider main container -->
       <div class="swiper swiper-container min-h-[28rem] md:min-h-[40rem]"> 
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper lg:pt-20 lg:pb-20 select-none">
           <!-- Slides -->
-          <div class="swiper-slide"><img src="../assets/tonos_azulrojo/carrousel/cumbres_borrascosas.png" alt="" class="md:w-[10rem] lg:w-[20rem] w-[12rem] pointer-events-none cursor-default"></div>
-          <div class="swiper-slide"><img src="../assets/tonos_azulrojo/carrousel/fundacion_imperio.png" alt="" class="md:w-[10rem] lg:w-[20rem] w-[12rem] pointer-events-none cursor-default"></div>
-          <div class="swiper-slide"><img src="../assets/tonos_azulrojo/carrousel/jane_eyre.png" class="md:w-[10rem] lg:w-[20rem] w-[12rem] pointer-events-none cursor-default"></div>
-          <div class="swiper-slide"><img src="../assets/tonos_azulrojo/carrousel/cumbres_borrascosas.png" alt="" class="md:w-[10rem] lg:w-[20rem] w-[12rem] pointer-events-none cursor-default"></div>
-          <div class="swiper-slide"><img src="../assets/tonos_azulrojo/carrousel/fundacion_imperio.png" alt="" class="md:w-[10rem] lg:w-[20rem] w-[12rem] pointer-events-none cursor-default"></div>
-          <div class="swiper-slide"><img src="../assets/tonos_azulrojo/carrousel/jane_eyre.png" class="md:w-[10rem] lg:w-[20rem] w-[12rem] pointer-events-none cursor-default"></div>
+          <div class="swiper-slide"><img src="../assets/tonos_azulrojo/carrousel/cumbres_borrascosas.png" alt="" class="md:w-[10rem] lg:w-[15rem] w-[12rem] pointer-events-none cursor-default"></div>
+          <div class="swiper-slide"><img src="../assets/tonos_azulrojo/carrousel/fundacion_imperio.png" alt="" class="md:w-[10rem] lg:w-[15rem] w-[12rem] pointer-events-none cursor-default"></div>
+          <div class="swiper-slide"><img src="../assets/tonos_azulrojo/carrousel/jane_eyre.png" class="md:w-[10rem] lg:w-[15rem] w-[12rem] pointer-events-none cursor-default"></div>
+          <div class="swiper-slide"><img src="../assets/tonos_azulrojo/carrousel/cumbres_borrascosas.png" alt="" class="md:w-[10rem] lg:w-[15rem] w-[12rem] pointer-events-none cursor-default"></div>
+          <div class="swiper-slide"><img src="../assets/tonos_azulrojo/carrousel/fundacion_imperio.png" alt="" class="md:w-[10rem] lg:w-[15rem] w-[12rem] pointer-events-none cursor-default"></div>
+          <div class="swiper-slide"><img src="../assets/tonos_azulrojo/carrousel/jane_eyre.png" class="md:w-[10rem] lg:w-[15rem] w-[12rem] pointer-events-none cursor-default"></div>
         </div>
         <!-- If we need pagination -->
         <!-- <div class="swiper-pagination"></div> -->

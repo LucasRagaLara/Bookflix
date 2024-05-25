@@ -1,6 +1,6 @@
 <template>
-    <div class="home w-full min-h-screen flex flex-col items-center xl:pt-28">
-        <div class="lg:flex lg:flex-row w-full items-center justify-center flex-col z-5 ">
+    <div class="home w-full min-h-screen flex flex-col items-center xl:pt-20">
+        <div class="lg:flex lg:flex-row w-full xl:items-start items-center justify-center flex-col z-5 ">
             <!-- Si es responsive se muestra este -->
             <div v-if="responsive" class="w-[95%] mx-auto">
                 <h1 class="xl:text-4xl text-center tracking-wider leading-normal font-bold text-3xl my-5 w-full">
@@ -8,7 +8,7 @@
                 </h1>
             </div>
             <!-- Si no es responsive -->
-            <div class="lg:w-[35%] lg:h-[60rem] border-4 border-r-0 rounded-l-xl border-[#40BFBC] shadow-lg shadow-left shadow-top shadow-bottom shadow-[#40BFBC] bg-[#212139] w-[90%] lg:mx-0 mx-auto"
+            <div class="lg:w-[35%] lg:h-[50rem] border-4 border-r-0 rounded-l-xl border-[#40BFBC] shadow-lg shadow-left shadow-top shadow-bottom shadow-[#40BFBC] bg-[#212139] w-[90%] lg:mx-0 mx-auto"
             v-else>
                 <div>
                     <img src="../assets/icons/bookmark.png" alt="" class="w-[64px] ml-12 mb-5">
@@ -22,13 +22,13 @@
                 </div>
             </div>
             <!-- Rutas login-Registro -->
-            <div class="lg:w-[35%] lg:h-[60rem] lg:bg-[#f1f1f1] rounded-r-xl lg:pl-12 pl-4 w-[90%] mx-auto lg:m-0 lg:border-4 lg:border-l-0 lg:shadow-lg lg:shadow-right lg:shadow-top lg:shadow-bottom lg:shadow-[#40BFBC] lg:border-[#40BFBC]">
+            <div class="lg:w-[35%] lg:h-[50rem] lg:bg-[#f1f1f1] rounded-r-xl lg:pl-12 pl-4 w-[90%] mx-auto lg:m-0 lg:border-4 lg:border-l-0 lg:shadow-lg lg:shadow-right lg:shadow-top lg:shadow-bottom lg:shadow-[#40BFBC] lg:border-[#40BFBC]">
                 <div class="flex flex-row lg:items-end lg:justify-end pt-6 lg:pr-6 items-center justify-center">
-                    <routerLink to="/login"  class="rounded-l-2xl px-5 py-3 text-[#fff] bg-[#C12C38] text-lg lg:w-[15%] text-center transition duration-300 hover:bg-red-900 font-bold w-[50%] botones-middle">Login</routerLink>
-                    <routerLink to="/registro" class="rounded-r-2xl px-5 py-3 text-[#fff] bg-[#CD5D66] text-lg lg:w-[15%] text-center font-bold cursor-default w-[50%] botones-middle">Registrarse</routerLink>
+                    <routerLink to="/login"  class="rounded-l-2xl px-5 py-3 text-[#fff] bg-[#C12C38] text-lg lg:w-[25%] text-center transition duration-300 hover:bg-red-900 font-bold botones-middle">Login</routerLink>
+                    <routerLink to="/registro" class="rounded-r-2xl px-5 py-3 text-[#fff] bg-[#CD5D66] text-lg lg:w-[25%] text-center font-bold cursor-default w-[50%] botones-middle cursor-pointer">Registrarse</routerLink>
                 </div>  
                 <!-- Formulario de registro -->
-                <form @submit.prevent="registrarse" class="lg:mt-6 flex flex-col lg:w-[75%] w-[90%] lg:h-[54rem] lg:ml-10 justify-center mt-10">
+                <form @submit.prevent="registrarse" class="lg:mt-6 flex flex-col lg:w-[75%] w-[90%] lg:h-[40rem] lg:ml-10 justify-center mt-10">
                     
                     <div class="flex flex-col mb-12">
                         <label for="nombre" class="text-2xl text-[#E53544] font-bold mb-6">NOMBRE</label>
@@ -53,7 +53,7 @@
                         </p>
                     </div>
 
-                    <button type="submit" class="xl:w-[30%] border-red-500 bg-[#C12C38] py-4 xl:mt-12 xl:mb-0 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-110 font-bold w-[60%] mt-8 mb-8 xl:mx-0 mx-auto boton-registro">Registrarse</button>
+                    <button type="submit" class="xl:w-[45%] border-red-500 bg-[#C12C38] py-4 xl:mt-12 xl:mb-0 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-110 font-bold w-[60%] mt-8 mb-8 xl:mx-0 mx-auto boton-registro">Registrarse</button>
 
                 </form>
             </div>
@@ -134,7 +134,6 @@
                     html: errores.map(error => `<p style="text-align: left; margin: 0;">${error}</p>`).join(''),
                     icon: 'error',
                     confirmButtonText: 'Continuar',
-                    confirmButtonColor: "#E53544",
                     customClass: {
                         popup: 'swal-wide',
                         confirmButton: 'swal-confirm-button'
@@ -154,7 +153,6 @@
                             text: enviar_datos.data.mensaje,
                             icon: 'success',
                             confirmButtonText: 'Continuar',
-                            confirmButtonColor: "#E53544",
                             customClass: {
                                 popup: 'swal-wide',
                                 confirmButton: 'swal-confirm-button'
@@ -171,7 +169,6 @@
                             text: 'Hubo un problema con el registro',
                             icon: 'error',
                             confirmButtonText: 'Continuar',
-                            confirmButtonColor: "#E53544",
                             customClass: {
                                 popup: 'swal-wide',
                                 confirmButton: 'swal-confirm-button'
@@ -255,4 +252,3 @@
     }
     
 </style>
-  

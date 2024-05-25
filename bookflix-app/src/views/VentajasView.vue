@@ -1,5 +1,5 @@
 <template>
-    <div class="home w-full min-h-screen flex flex-col items-center pt-28">
+    <div class="home w-full min-h-screen flex flex-col items-center xl:pt-12 pt-28">
       <items-component></items-component>
     </div>
 </template> 

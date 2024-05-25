@@ -1,5 +1,5 @@
 <template>
-    <div class="home w-full min-h-screen lg:pt-48 xl:pt-20 md:pt-36 pt-28">
+    <div class="home w-full min-h-screen lg:pt-48 xl:pt-0 md:pt-36 pt-28">
         <component :is="rutaDefinida" />
     </div>
 </template>

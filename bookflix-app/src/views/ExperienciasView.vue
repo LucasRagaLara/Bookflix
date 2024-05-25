@@ -1,8 +1,8 @@
 <template>
-    <div class="home w-full min-h-screen flex flex-col items-center pt-28">
+    <div class="home w-full min-h-screen flex flex-col items-center xl:pt-10 pt-28">
         <div class="xl:w-[60%] xl:text-center">
-            <h1 class="lg:text-5xl font-bold tracking-wide leading-normal lg:mb-3 lg:mt-0 lg:ml-0 mt-5 ml-4">LEE LO QUE<span class="text-[#E53544]"> NUESTROS USUARIOS</span> TIENEN QUE DECIR </h1>
-            <h1 class="lg:text-5xl font-bold tracking-wide leading-normal lg:mb-3 lg:mt-0 lg:ml-0 mt-5 ml-4">SOBRE SU EXPERIENCIA CON NOSOTROS</h1>
+            <h1 class=" xl:text-3xl lg:text-5xl font-bold tracking-wide leading-normal lg:mb-3 lg:mt-0 lg:ml-0 mt-5 ml-4">LEE LO QUE<span class="text-[#E53544]"> NUESTROS USUARIOS</span> TIENEN QUE DECIR </h1>
+            <h1 class=" xl:text-3xl lg:text-5xl font-bold tracking-wide leading-normal lg:mb-3 lg:mt-0 lg:ml-0 mt-5 ml-4">SOBRE SU EXPERIENCIA CON NOSOTROS</h1>
         </div>
         <!-- Tarjetas base -->
         <tarjetas></tarjetas>
