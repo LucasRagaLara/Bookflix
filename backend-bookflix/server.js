@@ -15,11 +15,13 @@ app.use(bodyParser.json());
 // RUTAS
 const usersRouter = require('./routes/users');
 const imagenesRouter = require('./routes/images');
-const perfilesRouter = require('./routes/perfiles')
+const perfilesRouter = require('./routes/perfiles');
+const contactRouter = require('./routes/contact');
 
 app.use('/api/users', usersRouter);
 app.use('/api/imagenes', imagenesRouter);
 app.use('/api/perfiles', perfilesRouter);
+app.use('/api/contact', contactRouter);
 
 // reescritura del historial
 app.use(history());
@@ -35,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../bookflix-app/dist', 'index.html'));
 });
+
 
 const port = process.env.PORT || 3000;
 

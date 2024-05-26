@@ -28,7 +28,7 @@
             </div>
 
             <div class="xl:w-[30%] xl:h-[45rem] xl:bg-[#f1f1f1] rounded-xl xl:pl-12 pl-6 w-[90%] items-start justify-start">
-                <form action="/contacto" method="POST" class="mt-6 flex flex-col w-full">
+                <form @submit.prevent="enviarMensaje" class="mt-6 flex flex-col w-full">
                     
                     <h1 class="xl:text-[#7A1C24] text-3xl mt-5 font-bold">El tema del mensaje es...</h1>
 
@@ -38,15 +38,16 @@
                                 type="button" 
                                 class="border-2 border-[#C7C7C7] text-[#C7C7C7] py-3 px-8 rounded-xl mb-6 lg:w-[75%] hover:bg-[#E53544] hover:text-white hover:border-[#E53544] transition-all duration-300 ease-in-out transform lg:hover:scale-110 hover:scale-105 xl:text-lg xl:items-center xl:justify-center xl:flex text-sm"
                                 :class="{ 'boton_seleccionado': botonSeleccionado === boton.valor }"
-                                @click="botonSeleccionado = boton.valor">
+                                @click="botonSeleccionado = boton.valor"
+                                >
                                 {{ boton.texto }}
                             </button>
                         </div>
                     </div>
 
-                    <input type="text" placeholder="Nombre" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] mb-12 xl:mb-8 text-[#9ca3af] w-[90%]" required minlength="3" maxlength="45">
+                    <input type="text" placeholder="Nombre" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] mb-12 xl:mb-8 text-[#9ca3af] w-[90%]" required minlength="3" maxlength="45" v-model="nombre">
 
-                    <input type="email" placeholder="Email" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] w-[90%]" required minlength="3" maxlength="45">
+                    <input type="email" placeholder="Email" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] w-[90%]" required minlength="3" maxlength="45" v-model="email">
 
                     <div class="flex flex-col mt-12 xl:mt-8">
                         <label for="Mensaje" class="text-2xl text-[#9ca3af]">Mensaje</label>
@@ -70,11 +71,15 @@
 </template>
 
 <script>
+    import axios from 'axios';
+    import Swal from 'sweetalert2'
     export default {
         name: 'ContactoView',
 
         data(){
             return{
+                nombre: '',
+                email: '',
                 textarea_contact: '',
                 botones: [
                     { texto: 'Cuenta', valor: 'Cuenta' },
@@ -83,11 +88,8 @@
                     { texto: 'Conexión', valor: 'Conexión' },
                     { texto: 'Otro', valor: 'Otro' }
                 ],
-                botonSeleccionado: null
+                botonSeleccionado: null,
             }
-        },
-        computed:{
-
         },
 
         methods:{
@@ -97,6 +99,48 @@
             this.$nextTick(() => {
                 this.textarea_contact = this.textarea_contact.trim();
             });
+          },
+          async enviarMensaje(){
+            let botonText;
+            if (this.botonSeleccionado == null){
+                botonText = "Sin especificar"
+            } else {
+                botonText = this.botonSeleccionado;
+            }
+
+            try{
+                const envio = await axios.post('/api/contact/recepcion', {
+                    tema: botonText,
+                    nombre: this.nombre,
+                    email: this.email,
+                    mensaje: this.textarea_contact
+                });
+                if (envio.data.success){
+                    Swal.fire({
+                        icon: 'sucess',
+                        title:  'Mensaje enviado',
+                        text: envio.data.mensaje
+                    })
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title:  'Error',
+                        text: envio.data.mensaje
+                    })
+                }
+            }catch(error){
+                console.log(error);
+                Swal.fire({
+                        icon: 'Error',
+                        title:  'Error',
+                        text: 'Hubo un imprevisto. Por favor, inténtalo de nuevo.'
+                    })
+            } finally {
+                this.nombre = '';
+                this.email = '';
+                this.textarea_contact = '';
+                this.botonSeleccionado = '';
+            }
           }
         }
     }
