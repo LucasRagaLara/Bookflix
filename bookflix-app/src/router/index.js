@@ -83,6 +83,16 @@ const routes = [
     path: '/:pathMatch(.*)*',
     redirect: '/404',
   },
+  {
+    path: '/forgot',
+    name: 'forgot',
+    component: () => import('../views/ForgotPasswordView.vue')
+  },
+  {
+    path: '/change-password/:id',
+    name: 'change-password',
+    component: () => import('../views/ChangePasswordView.vue')
+  }
 ]
 
 const router = createRouter({

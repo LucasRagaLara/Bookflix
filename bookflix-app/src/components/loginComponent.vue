@@ -18,10 +18,13 @@
 
                 <div class="items-center justify-center flex flex-col xl:mt-4">
                     <img src="../assets/backgrounds/muchos_libros.png" alt="" class="xl:w-[80%] lg:w-[60%]">
+                    <p class="mx-auto text-center mt-4 mb-4 font-bold mb-2 text-[1.1rem]">¿Se te ha olvidado la contraseña?
+                        <RouterLink to="/forgot" class="mt-4 hover:text-[#E53544] font-bold transition-all duration-300 ease-in-out xl:mb-0 mb-2 text-[1.1rem]">haz click aquí</RouterLink>
+                    </p>
                 </div>
             </div>
 
-            <div class="lg:w-[35%] lg:h-[50rem] lg:bg-[#f1f1f1] rounded-r-xl lg:pl-12 pl-4 w-[90%] mx-auto lg:m-0 lg:border-4 lg:border-l-0 lg:shadow-lg lg:shadow-right lg:shadow-top lg:shadow-bottom lg:shadow-[#40BFBC] lg:border-[#40BFBC]">
+            <div class="lg:w-[35%] lg:min-h-[50rem] lg:bg-[#f1f1f1] rounded-r-xl lg:pl-12 pl-4 w-[90%] mx-auto lg:m-0 lg:border-4 lg:border-l-0 lg:shadow-lg lg:shadow-right lg:shadow-top lg:shadow-bottom lg:shadow-[#40BFBC] lg:border-[#40BFBC] lg:mx-0">
                 <div class="flex flex-row lg:items-end lg:justify-end pt-6 lg:pr-6 items-center justify-center">
                     <routerLink to="/login" class="rounded-l-2xl px-5 py-3 text-[#fff] bg-[#CD5D66] text-lg lg:w-[25%] text-center font-bold cursor-default w-[50%] botones-middle">Login</routerLink>
                     <routerLink to="/registro" class="rounded-r-2xl px-5 py-3 text-[#fff] bg-[#C12C38] text-lg lg:w-[25%] text-center transition duration-300 hover:bg-red-900 font-bold botones-middle">Registrarse</routerLink>
@@ -50,12 +53,16 @@
                     </div>
 
                     <button type="submit" class="xl:w-[45%] border-red-500 bg-[#C12C38] py-4 xl:mt-12 xl:mb-0 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-110 font-bold w-[60%] mt-8 mb-8 xl:mx-0 mx-auto boton-registro">Iniciar sesión</button>
-
+                    <p v-if="responsive" class="mx-auto text-center mt-4 mb-4 font-bold mb-2 text-[1.1rem]">¿Se te ha olvidado la contraseña?
+                        <RouterLink to="/forgot" class="mt-4 hover:text-[#E53544] font-bold transition-all duration-300 ease-in-out xl:mb-0 mb-2 text-[1.1rem]">haz click aquí</RouterLink>
+                    </p>
                 </form>
             </div>
         </div>
-    </div>
-</template>
+    </div>  
+</template> 
+  
+  
   
 <script>
 import axios from 'axios';
@@ -141,7 +148,7 @@ export default {
 </script>
   
 <style scoped>
-    
+
 .checkbox-custom{
     width: 20px;
     height: 20px;
@@ -178,5 +185,6 @@ export default {
         color: #fff;
     }
 }
+
 
 </style>

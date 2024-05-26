@@ -17,12 +17,12 @@
                     ¡Registrate <span class="text-[#E53544]">gratis</span> y explora todo nuestro contenido!
                 </h1>
 
-                <div class="items-center justify-center flex flex-col  xl:mt-4">
-                    <img src="../assets/backgrounds/muchos_libros.png" alt="" class="w-[80%]">
+                <div class="items-center justify-center flex flex-col  xl:mt-4 w-full">
+                    <img src="../assets/backgrounds/muchos_libros.png" alt="" class="lg:w-[80%]">
                 </div>
             </div>
             <!-- Rutas login-Registro -->
-            <div class="lg:w-[35%] lg:h-[50rem] lg:bg-[#f1f1f1] rounded-r-xl lg:pl-12 pl-4 w-[90%] mx-auto lg:m-0 lg:border-4 lg:border-l-0 lg:shadow-lg lg:shadow-right lg:shadow-top lg:shadow-bottom lg:shadow-[#40BFBC] lg:border-[#40BFBC]">
+            <div class="lg:w-[35%] lg:min-h-[50rem] lg:bg-[#f1f1f1] rounded-r-xl lg:pl-12 pl-4 w-[90%] mx-auto lg:m-0 lg:border-4 lg:border-l-0 lg:shadow-lg lg:shadow-right lg:shadow-top lg:shadow-bottom lg:shadow-[#40BFBC] lg:border-[#40BFBC]">
                 <div class="flex flex-row lg:items-end lg:justify-end pt-6 lg:pr-6 items-center justify-center">
                     <routerLink to="/login"  class="rounded-l-2xl px-5 py-3 text-[#fff] bg-[#C12C38] text-lg lg:w-[25%] text-center transition duration-300 hover:bg-red-900 font-bold botones-middle">Login</routerLink>
                     <routerLink to="/registro" class="rounded-r-2xl px-5 py-3 text-[#fff] bg-[#CD5D66] text-lg lg:w-[25%] text-center font-bold cursor-default w-[50%] botones-middle cursor-pointer">Registrarse</routerLink>
