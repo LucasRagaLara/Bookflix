@@ -32,8 +32,31 @@ async function reenviarMensaje(tema, nombre_user, email_user, mensaje_user){
 
 };
 
+async function enviarMailRecuperacion(usuario, token){
+  try{
+    const configurarEmail = {
+        from: process.env.MAIL_SMTP,
+        to: usuario.email,
+        subject: "Recuperacion password",
+        text: `Nombre: ${usuario.nombre}\nHaga click en el siguiente enlace para recuperar su password:\nEnlace: http://localhost:3000/change-password/${token}`
+    };
+
+    const comprobar = await transporter.sendMail(configurarEmail);
+
+    if (comprobar.rejected.length === 0) {
+        return true;
+      } else {
+        return false;
+      };
+  }catch(error){
+      console.error("Hubo un error durante el envío del email", error);
+      return false;
+  };
+}
+
 
 
 module.exports = {
-    reenviarMensaje
+    reenviarMensaje,
+    enviarMailRecuperacion
 };

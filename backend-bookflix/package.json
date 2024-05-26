@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "start:pm2": "pm2 start server.js --name backend-bookflix",
-    "stop:pm2": "pm2 stop backend-bookflix"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +19,7 @@
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.9.7",
     "nodemailer": "^6.9.13",
+    "nodemon": "^3.1.1",
     "pm2": "^5.3.1",
     "serve-static": "^1.15.0"
   }

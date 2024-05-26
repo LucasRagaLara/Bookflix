@@ -1,5 +1,5 @@
-const { autentificarUsuario, registrarNuevoUsuario } = require('../services/userService');
-const {generarToken } = require('../modules/cookies');
+const { autentificarUsuario, registrarNuevoUsuario, recuperarPassword, nuevaPassword  } = require('../services/userService');
+const {generarToken, decodificarToken } = require('../modules/cookies');
 
 async function registrar(req, res){
     try{
@@ -34,7 +34,52 @@ async function autentificar(req, res){
     }
 }
 
+async function recuperar(req, res){
+    try{
+        const { email } = req.body;
+        let email_user = email.trim();
+        const reenvio = await recuperarPassword(email_user);
+        if (reenvio){
+            res.status(200).json({success: true, mensaje: "Revise su bandeja de entrada"});
+        }else{
+            res.status(200).json({success: true, mensaje: "Revise su bandeja de entrada"});
+        };
+
+    }catch(error){
+        console.error(error);
+    };
+};
+
+async function CambiarPassword(req, res){
+    try{
+        const { password } = req.body;
+        let password_user = password.trim();
+        let token = req.params.id;
+        let decodificar_token = await decodificarToken(token);
+
+        if (decodificar_token && decodificar_token.id){
+
+            const idUsuario = decodificar_token.id;
+            const cambiar_password = await nuevaPassword(idUsuario, password_user);
+
+            if (cambiar_password){
+                res.status(200).json({success: true, mensaje: "Contraseña cambiada correctamente"});
+            }else{
+                res.status(200).json({success: false, mensaje: "Hubo un problema. Intentelo de nuevo más tarde."})
+            }
+
+        }else{
+            res.status(200).json({success: false, mensaje: "El token ha caducado"});
+        }
+      
+    }catch(error){
+        console.error(error);
+    };
+}
+
 module.exports = {
     registrar,
-    autentificar
+    autentificar,
+    recuperar,
+    CambiarPassword
 }
