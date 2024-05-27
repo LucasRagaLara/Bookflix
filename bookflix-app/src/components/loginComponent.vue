@@ -8,7 +8,7 @@
                 </h1>
             </div>
 
-            <div class="lg:w-[35%] lg:h-[50rem] border-4 border-r-0 rounded-l-xl border-[#40BFBC] shadow-lg shadow-left shadow-top shadow-bottom shadow-[#40BFBC] bg-[#212139] w-[90%] lg:mx-0 mx-auto" v-else>
+            <div class="lg:w-[35%] lg:h-[52rem] border-4 border-r-0 rounded-l-xl border-[#40BFBC] shadow-lg shadow-left shadow-top shadow-bottom shadow-[#40BFBC] bg-[#212139] w-[90%] lg:mx-0 mx-auto" v-else>
                 <div>
                     <img src="../assets/icons/bookmark.png" alt="" class="w-[64px] ml-12 mb-5">
                 </div>
@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="lg:w-[35%] lg:min-h-[50rem] lg:bg-[#f1f1f1] rounded-r-xl lg:pl-12 pl-4 w-[90%] mx-auto lg:m-0 lg:border-4 lg:border-l-0 lg:shadow-lg lg:shadow-right lg:shadow-top lg:shadow-bottom lg:shadow-[#40BFBC] lg:border-[#40BFBC] lg:mx-0">
+            <div class="lg:w-[35%] lg:min-h-[52rem] lg:bg-[#f1f1f1] rounded-r-xl lg:pl-12 pl-4 w-[90%] mx-auto lg:m-0 lg:border-4 lg:border-l-0 lg:shadow-lg lg:shadow-right lg:shadow-top lg:shadow-bottom lg:shadow-[#40BFBC] lg:border-[#40BFBC] lg:mx-0">
                 <div class="flex flex-row lg:items-end lg:justify-end pt-6 lg:pr-6 items-center justify-center">
                     <routerLink to="/login" class="rounded-l-2xl px-5 py-3 text-[#fff] bg-[#CD5D66] text-lg lg:w-[25%] text-center font-bold cursor-default w-[50%] botones-middle">Login</routerLink>
                     <routerLink to="/registro" class="rounded-r-2xl px-5 py-3 text-[#fff] bg-[#C12C38] text-lg lg:w-[25%] text-center transition duration-300 hover:bg-red-900 font-bold botones-middle">Registrarse</routerLink>
