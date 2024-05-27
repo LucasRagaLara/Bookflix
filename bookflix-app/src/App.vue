@@ -61,7 +61,10 @@ export default {
     esRutaExcluida() {
       return this.$route.path.includes('/editar-perfil')||
              this.$route.path.includes('/seleccionar-imagen') ||
-             this.$route.path.includes('/cambiar-imagen')
+             this.$route.path.includes('/cambiar-imagen') ||
+             this.$route.path.includes('/privacidad') ||
+             this.$route.path.includes('/aviso-legal') ||
+             this.$route.path.includes('/cookies')
       }
   },
 
