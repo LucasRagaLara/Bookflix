@@ -6,7 +6,7 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://bookflix-app.netlify.app',
         changeOrigin: true,
         // pathRewrite: {'^/api': ''}
       }
