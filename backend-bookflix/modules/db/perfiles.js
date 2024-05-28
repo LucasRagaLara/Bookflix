@@ -1,6 +1,7 @@
 const iniciarDB = require('./init_db');
 
 async function getPerfilesDB(id_usuario){
+    let conectarDB;
     try{
         const conectarDB = await iniciarDB();
         const [perfiles, cols] = await conectarDB.query('SELECT * FROM perfiles WHERE usuario_id = ?', [id_usuario]);
@@ -12,12 +13,17 @@ async function getPerfilesDB(id_usuario){
      } catch (error){
          console.error('Error al registrar usuario en la base de datos:', error);
          throw error;
+     }finally{
+        if (conectarDB) {
+            conectarDB.end(); 
+        }
      }
 }
 
 async function agregarPerfilDB(nombre_perfil, imagen_perfil, id_usuario, id_perfil){
+    let conectarDB;
     try{
-        const conectarDB = await iniciarDB();
+        conectarDB = await iniciarDB();
         // const [perfiles, cols] = await conectarDB.query('SELECT * FROM perfiles');
         const [comprobarSiExiste, cols] = await conectarDB.query("SELECT nombre, imagen from perfiles where id = ?", [id_perfil])
         console.log(comprobarSiExiste)
@@ -30,10 +36,15 @@ async function agregarPerfilDB(nombre_perfil, imagen_perfil, id_usuario, id_perf
      } catch (error){
          console.error('Error al registrar usuario en la base de datos:', error);
          throw error;
+     } finally{
+        if (conectarDB) {
+            conectarDB.end(); 
+        }
      }
 }
 
 async function buscarPerfilDB(nombre_perfil, imagen_perfil, id_perfil){
+    let conectarDB;
     try{
         const conectarDB = await iniciarDB();
         const [perfil_buscar, cols] = await conectarDB.query('SELECT * FROM perfiles WHERE id = ?', [id_perfil]);
@@ -46,12 +57,17 @@ async function buscarPerfilDB(nombre_perfil, imagen_perfil, id_perfil){
      } catch (error){
          console.error('Error al registrar usuario en la base de datos:', error);
          throw error;
+     }finally{
+        if (conectarDB) {
+            conectarDB.end(); 
+        }
      }
 }
 
 async function eliminarPerfilBD(id_perfil){
+    let conectarDB;
     try{
-        const conectarDB = await iniciarDB();
+        conectarDB = await iniciarDB();
         const [resultado] = await conectarDB.query('DELETE FROM perfiles WHERE id = ?', [id_perfil]);
         if (resultado.affectedRows === 0){
             return false
@@ -59,8 +75,12 @@ async function eliminarPerfilBD(id_perfil){
             return true;
         }
      } catch (error){
-         console.error('Error al registrar usuario en la base de datos:', error);
+         console.error('Hubo un problema durante el borrado del usuario:', error);
          throw error;
+     }finally{
+        if (conectarDB) {
+            conectarDB.end(); 
+        }
      }
 }
 

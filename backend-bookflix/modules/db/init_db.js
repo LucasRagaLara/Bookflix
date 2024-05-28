@@ -1,5 +1,5 @@
 const mysql = require('mysql2/promise');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 
 const HOST = process.env.DB_HOST;
 const USER = process.env.DB_USER;
@@ -17,4 +17,4 @@ async function iniciarDB(){
     return connection;
 };
 
-module.exports =iniciarDB;
+module.exports = iniciarDB;
