@@ -47,7 +47,7 @@ export default {
 
     if (!popupCookie){
       Swal.fire({
-        title: 'Política de Cookies',
+        title: 'Política de cookies',
         text: 'Este sitio web utiliza cookies para garantizar que obtenga la mejor experiencia en nuestro sitio web.',
         icon: 'info',
         confirmButtonText: 'Aceptar',
