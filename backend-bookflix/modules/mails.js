@@ -38,7 +38,7 @@ async function enviarMailRecuperacion(usuario, token){
         from: process.env.MAIL_SMTP,
         to: usuario.email,
         subject: "Recuperacion password",
-        text: `Nombre: ${usuario.nombre !== undefined ? usuario.nombre : 'usuario'}\nHaga click en el siguiente enlace para recuperar su password:\nEnlace: http://localhost:3000/change-password/${token}`
+        text: `Nombre: ${usuario.nombre !== undefined ? usuario.nombre : 'usuario'}\nHaga click en el siguiente enlace para recuperar su password:\nEnlace: https://bookflix-app.netlify.app/change-password/${token}`
     };
 
     const comprobar = await transporter.sendMail(configurarEmail);
