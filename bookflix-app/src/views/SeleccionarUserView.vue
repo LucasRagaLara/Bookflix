@@ -81,7 +81,7 @@ import Swal from 'sweetalert2';
             },
             editarPerfil(perfil){   
                 console.log(perfil)
-                  // Reiniciar el nuevoPerfil a null
+                  // Reiniciar el nuevoPerfil a false
                     this.$store.commit('INICIALIZAR_PERFIL', false);
                     // Actualizar el localStorage para reflejar el cambio
                     localStorage.removeItem('nuevoPerfil');

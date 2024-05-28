@@ -79,7 +79,11 @@ export default {
                                 popup: 'swal-wide',
                                 confirmButton: 'swal-confirm-button'
                             }
-                        });                
+                        }).then((redireccion) => {
+                                if (redireccion.isConfirmed){
+                                    this.$router.push('/login');
+                                }
+                            });                
                     // Si devuelve un false
                     } else {
                         Swal.fire({

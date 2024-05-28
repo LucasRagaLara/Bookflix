@@ -59,7 +59,11 @@ export default {
                             popup: 'swal-wide',
                             confirmButton: 'swal-confirm-button'
                         }
-                    });                
+                    }).then((redireccion) => {
+                        if (redireccion.isConfirmed){
+                            this.$router.push('/');
+                        }
+                    });
                 // Si devuelve un false
                 } else {
                     console.log("Entra en el false")

@@ -12,7 +12,7 @@
                 <div class="w-full flex items-center justify-center gap-x-10 mb-20">
                     <div class="border border-red-900 h-[15rem] w-[35%] rounded-lg flex-col flex pt-10 pl-10">
                         <label for="Nombre" class="font-bold mb-4">Elige tu nombre</label>
-                        <input type="text" class="bg-[#802C32] rounded-lg outline-none placeholder:text-[#c1c1c1] border-none pl-4 p-1 w-[80%]" placeholder="Nombre" v-model="nombre">
+                        <input type="text" class="bg-[#802C32] rounded-lg outline-none placeholder:text-[#c1c1c1] border-none pl-4 p-1 w-[80%]" placeholder="Nombre" v-model="nombre" maxlength="20">
                     </div>
 
                     <div class="w-[20%] flex items-center justify-center relative">
@@ -62,6 +62,9 @@ import Swal from 'sweetalert2';
                 this.nombre = storedNombre;
             } else {
                 this.nombre = Object.keys(this.perfilEditando).length === 0 ? this.nuevoPerfil.nombre : this.perfilEditando.nombre;
+                if (this.nombre == undefined){
+                    this.nombre = '';
+                }
             }
             const obtenerPerfilEditando = localStorage.getItem('perfilEditando'); 
 
@@ -87,14 +90,11 @@ import Swal from 'sweetalert2';
             const cargarDatos = async () => {
                 const idUsuario = this.$route.params.id
                 const comprobarPerfil = this.perfiles.find(usuario => usuario.id == idUsuario);
-                console.log("tras recorrer en busca de si lo tiene un usuario asignado", comprobarPerfil)
-                console.log("")
                 if (comprobarPerfil !== undefined){
                     console.log("Estoy editando un perfil")
-                    console.log("Esto lo que me da los perfiles", comprobarPerfil)
                 }else if(this.nuevoPerfil == false){
-                    console.log("Si es false, es que no se ha creado y se crea")
-                    this.crearPerfil()
+                    console.log("Si es false, es que no se ha creado y se crea");
+                    this.crearPerfil();
                 }
             };
             cargarDatos();
@@ -104,24 +104,23 @@ import Swal from 'sweetalert2';
             ...mapState(['perfilEditando', 'imagenes_perfiles', 'nuevoPerfil', 'perfiles'])
         },
         methods:{
-            ...mapMutations(['RESETEAR_EDICION']),
+            ...mapMutations(['RESETEAR_EDICION', 'RESETEAR_NUEVO_PERFIL', 'RESETEAR_NOMBRE_PERFIL']),
             ...mapActions(['crearPerfil']),
             async listo(){
 
-                if (!this.nombre || this.nombre.length < 3) {
+                if (!this.nombre || this.nombre.length < 3 || this.nombre.length >= 20) {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'El nombre debe tener al menos 3 caracteres',
+                        text: 'El nombre debe estar entre 3 y 20 caracteres',
                     });
                     return;
-                }
+                } 
                 const id = localStorage.getItem('userId')
                 this.imagenSeleccionada = this.$refs.imagenSeleccionada.src;
                 if (Object.keys(this.perfilEditando).length !== 0) {
                     // Editar perfil existente
                     try {
-                        console.log(this.nombre, this.imagenSeleccionada)
                         const editarPerfil = await axios.put(`/api/perfiles/editar/${this.$route.params.id}`, {
                             nombre: this.nombre,
                             imagen: this.imagenSeleccionada
@@ -129,6 +128,8 @@ import Swal from 'sweetalert2';
                         // Manejar la respuesta según corresponda
                         if (editarPerfil.data.success) {
                             // El perfil se editó correctamente
+                            this.RESETEAR_EDICION();
+                            this.RESETEAR_NOMBRE_PERFIL();
                             this.$router.push({ name: 'Perfil', params: { id: id} });
                         } else {
                             // Mostrar mensaje de error si falla la edición
@@ -151,9 +152,10 @@ import Swal from 'sweetalert2';
                             nombre: this.nombre,
                             imagen: this.imagenSeleccionada
                         });
-                        console.log(agregarPerfil)
                         if (agregarPerfil.data.success) {
                             // El perfil se agregó correctamente
+                            this.RESETEAR_NUEVO_PERFIL();
+                            this.RESETEAR_NOMBRE_PERFIL();
                             this.$router.push({ name: 'Perfil', params: { id: id} });
                         }else{
                             Swal.fire({
@@ -168,10 +170,12 @@ import Swal from 'sweetalert2';
                 }
             },
             seleccionarImagen(){
-                localStorage.setItem('nombrePerfilEditando', this.nombre);
+                localStorage.setItem('nombrePerfilEditando', this.nombre !== undefined ? this.nombre : '');
                 this.$router.push({name: 'cambiar-imagen', params: {id: this.$route.params.id}})
             },
             cancelarEdicionPerfiles(){
+                this.RESETEAR_NUEVO_PERFIL();
+                this.RESETEAR_NOMBRE_PERFIL();
                 const id = localStorage.getItem('userId')
                 localStorage.removeItem('nombrePerfilEditando');
                 this.$router.push({ name: 'Perfil', params: { id: id} });

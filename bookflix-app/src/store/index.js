@@ -22,8 +22,15 @@ export default createStore({
       localStorage.setItem('perfilEditando', JSON.stringify(perfil));
     },
     RESETEAR_EDICION(state){
-      state.perfilEditando = {};
+      state.perfilEditando = false;
       localStorage.setItem('perfilEditando', JSON.stringify(state.perfilEditando));
+    },
+    RESETEAR_NOMBRE_PERFIL() {
+      localStorage.removeItem('nombrePerfilEditando');
+  },
+    RESETEAR_NUEVO_PERFIL(state){
+      state.nuevoPerfil = false
+      localStorage.setItem('nuevoPerfil', JSON.stringify(state.nuevoPerfil));
     },
     INICIALIZAR_PERFIL(state, data){
       state.nuevoPerfil = data
