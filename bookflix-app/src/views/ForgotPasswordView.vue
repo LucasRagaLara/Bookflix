@@ -51,7 +51,7 @@ export default {
                 // Si se devuelve un true del backend
                 if (enviar_datos.data.success) {
                     Swal.fire({
-                        title: 'success',
+                        title: '¡Genial!',
                         text: enviar_datos.data.mensaje,
                         icon: 'success',
                         confirmButtonText: 'Continuar',
@@ -64,7 +64,7 @@ export default {
                 } else {
                     console.log("Entra en el false")
                     Swal.fire({
-                    title: 'success',
+                    title: '¡MAL!',
                     text: enviar_datos.data.mensaje,
                     icon: 'success',
                     confirmButtonText: 'Continuar',
