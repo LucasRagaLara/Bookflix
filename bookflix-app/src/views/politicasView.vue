@@ -27,7 +27,7 @@
         methods:{
         },
         mounted(){
-            document.body.style.cssText += 'overflow: auto;';
+            document.body.style.cssText += 'overflow: auto!important;';
         },
         beforeUnmount(){
             document.body.style.cssText += 'overflow: hidden;';
@@ -36,7 +36,7 @@
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     .home{
         background: #212139;
         background-repeat: no-repeat;
