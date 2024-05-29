@@ -73,7 +73,7 @@ import {mapState} from 'vuex';
             }
         },
         beforeUnmount(){
-            document.body.style.cssText += 'overflow: hidden !important;';
+            document.body.style.cssText += 'overflow: hidden;';
         },
     }
 
