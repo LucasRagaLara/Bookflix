@@ -1,0 +1,26 @@
+
+// Creación de tabla usuarios
+
+CREATE TABLE `bf8xflwlcxvqesfbo1th`.`usuarios` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(300) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
+
+// Creación de tabla perfiles con Foreign Key a usuarios
+
+CREATE TABLE `bf8xflwlcxvqesfbo1th`.`perfiles` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NULL,
+  `imagen` VARCHAR(500) NOT NULL,
+  `usuario_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  CONSTRAINT `idUsuarios`
+    FOREIGN KEY (`usuario_id`)
+    REFERENCES `bf8xflwlcxvqesfbo1th`.`usuarios` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);

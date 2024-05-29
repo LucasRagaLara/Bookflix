@@ -1,0 +1,30 @@
+Server: sql7.freemysqlhosting.net
+Name: sql7710248
+Username: sql7710248
+Password: rWHRtgiEZ8
+Port number: 3306
+
+// Creación de tablas con fremysql
+
+CREATE TABLE `sql7710248`.`usuarios` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(300) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC)
+);
+
+CREATE TABLE `sql7710248`.`perfiles` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NULL,
+  `imagen` VARCHAR(500) NOT NULL,
+  `usuario_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+  CONSTRAINT `idUsuarios`
+    FOREIGN KEY (`usuario_id`)
+    REFERENCES `sql7710248`.`usuarios` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);
