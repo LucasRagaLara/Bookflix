@@ -38,7 +38,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../bookflix-app/dist', 'index.html'));
 });
 
-const BASE_URL = process.env.BASE_URL
+const BASE_URL = process.env.BASE_URL || 'localhost'
 const port = process.env.PORT || 3000;
 
 // Inicio del servidor
