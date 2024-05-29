@@ -27,10 +27,10 @@
         methods:{
         },
         mounted(){
-            document.body.style.cssText += 'overflow: auto !important;';
+            document.body.style.cssText += 'overflow: auto;';
         },
         beforeUnmount(){
-            document.body.style.cssText += 'overflow: hidden !important;';
+            document.body.style.cssText += 'overflow: hidden;';
         }
     }
 

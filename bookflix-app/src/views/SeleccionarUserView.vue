@@ -1,6 +1,6 @@
 <template>
 
-    <div class="home w-full min-h-screen items-center flex flex-col xl:pt-28">
+    <div class="home w-full min-h-screen items-center flex flex-col xl:pt-28 pt-28">
         <h1 class="lg:text-5xl font-bold tracking-wide leading-normal lg:mb-3 lg:mt-0 lg:ml-0 mt-5 ml-4">¡Selecciona tu usuario!</h1>
         <div class="flex items-end justify-center w-[75%] mx-auto h-[35vh] gap-x-40">
 
