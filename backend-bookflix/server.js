@@ -39,10 +39,10 @@ app.get('*', (req, res) => {
 });
 
 const BASE_URL = process.env.BASE_URL
-// const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 // Inicio del servidor
-app.listen(() => {
-    console.log(`Servidor en marcha en la ruta: ${BASE_URL}`);
+app.listen(port, () => {
+    console.log(`Servidor en marcha en la ruta: ${BASE_URL}:${port}`);
     console.log(app.use(serveStatic(path.join(__dirname, '../bookflix-app/dist'))));
 });

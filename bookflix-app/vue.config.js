@@ -6,7 +6,7 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       '/api': {
-        target: 'https://bookflix-backend.onrender.com',
+        target: 'https://bookflix-backend.onrender.com:3000',
         changeOrigin: true,
         // pathRewrite: {'^/api': ''}
       }
