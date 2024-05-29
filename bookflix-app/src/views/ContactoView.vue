@@ -27,7 +27,7 @@
 
             </div>
 
-            <div class="xl:w-[30%] xl:h-[45rem] xl:bg-[#f1f1f1] rounded-xl xl:pl-12 pl-6 w-[90%] items-start justify-start mx-auto">
+            <div class="xl:w-[30%] xl:h-[45rem] xl:bg-[#f1f1f1] rounded-xl xl:pl-12 pl-6 w-[90%] items-start justify-start mx-auto lg:mx-0">
                 <form @submit.prevent="enviarMensaje" class="mt-6 flex flex-col w-full">
                     
                     <h1 class="xl:text-[#7A1C24] text-3xl mt-5 font-bold">El tema del mensaje es...</h1>
