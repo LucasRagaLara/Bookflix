@@ -6,10 +6,11 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       '/api': {
-        target: 'https://bookflix-app.netlify.app/',
+        target: 'https://bookflix-backend.onrender.com',
         changeOrigin: true,
         // pathRewrite: {'^/api': ''}
       }
     }
   }
 });
+
