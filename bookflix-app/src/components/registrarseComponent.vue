@@ -125,7 +125,7 @@
                 }
 
                 if (!this.validacionPassword()) {
-                    errores.push('El password no es válido, debe contener una Mayúscula, una minúscula y un número');
+                    errores.push('El password no es válido, debe contener una mayúscula, una minúscula y un número');
                 }
                 // Si hay errores. Sale el error con el problema.
                 if (errores.length > 0) {
@@ -149,7 +149,7 @@
                         // Si se devuelve un true del backend
                         if (enviar_datos.data.success) {
                             Swal.fire({
-                            title: '¡Ya puedes ir a Iniciar sesión!',
+                            title: '¡Ya puedes ir al login!',
                             text: enviar_datos.data.mensaje,
                             icon: 'success',
                             confirmButtonText: 'Continuar',
