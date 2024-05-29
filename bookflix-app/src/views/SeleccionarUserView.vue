@@ -2,9 +2,9 @@
 
     <div class="home w-full min-h-screen items-center flex flex-col xl:pt-28 pt-28">
         <h1 class="lg:text-5xl font-bold tracking-wide leading-normal lg:mb-3 lg:mt-0 lg:ml-0 mt-5 ml-4 mb-20">¡Selecciona tu usuario!</h1>
-        <div class="flex lg:items-end justify-center w-[75%] mx-auto h-[35vh] lg:gap-x-40 lg:flex-row flex-col items-center lg:gap-y-0 gap-y-10">
+        <div class="flex lg:items-end justify-center w-[75%] mx-auto lg:h-[35vh] lg:gap-x-40 lg:flex-row flex-col items-center lg:gap-y-0 gap-y-10">
 
-            <div class="flex items-center justify-center flex-col flex-wrap">
+            <div class="flex lg:items-center lg:justify-center flex-col lg:flex-wrap">
                 <div class="bg-[#C12C38] flex items-center justify-center w-[10rem] h-[10rem] rounded-full transition-all duration-300 ease-in-out transform hover:scale-110 cursor-pointer">
                     <i class="fa-solid fa-plus text-[5rem]" @click="nuevoPerfil()"></i>
                 </div>
@@ -19,7 +19,7 @@
             </div>
             
         </div>
-        <div class="flex items-center justify-center w-full h-[25rem]">
+        <div class="flex items-center justify-center w-full lg:h-[25rem] lg:mb-0 lg:mt-0 mt-12 mb-12">
 
             <button @click="administrarPerfiles()" class="bg-[#C12C38] py-3 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110" v-if="administrarEstado">
                 Administrar perfiles
