@@ -1,18 +1,18 @@
 <template>
-  <div class="home w-full min-h-screen lg:pt-28">
+  <div class="home w-full min-h-screen lg:pt-28 pt-20">
     <!-- Menú con el logo -->
     <div class="flex w-[60%] absolute right-0 top-0">
       <particlesComponent />
     </div>
     <!-- Introducción y fondo de la página -->
     <div class="lg:justify-start lg:w-full lg:h-[40rem] h-screen items-center justify-center flex relative z-3">
-      <div class="lg:w-[50%] flex flex-col items-center justify-center w-full">
-        <h1 class="lg:text-5xl lg:mb-12 text-center font-bold tracking-wider leading-normal text-3xl mb-20">¡BIENVENIDO A TU MUNDO<br><br>DE HISTORIAS SIN FIN!</h1>
+      <div class="lg:w-[50%] flex flex-col items-center justify-center w-[95%]">
+        <h1 class="lg:text-5xl lg:mb-12 text-center font-bold tracking-wider leading-normal text-3xl mb-20">¡BIENVENIDO A TU MUNDO DE HISTORIAS SIN FIN!</h1>
         <p class="lg:text-2xl lg:text-center lg:mb-2 tracking-wider leading-normal text-justify w-[90%] mx-auto mb-10"><strong>Descubre</strong> un mundo de lecturas en línea.</p>
         <p class="lg:text-2xl lg:text-center tracking-wider leading-normal text-justify w-[90%] mx-auto mb-5"><strong>Explora</strong>, lee y repite: Tu viaje literario te espera.</p>
-        <div class="lg:gap-x-28 flex mt-5 h-28 w-full items-center justify-center gap-x-12">
-          <routerLink to="/login" class="lg:px-10 lg:py-4 bg-[#C12C38] rounded-xl animation_per px-4 py-2">Iniciar sesión</routerLink>
-          <routerLink to="/registro" class="lg:px-10 lg:py-4 border-2 border-[#40BFBC] rounded-xl px-4 py-2 animation_per bg-[#0c0c33]">Registrarse</routerLink>
+        <div class="lg:gap-x-28 flex mt-5 h-28 lg:w-full w-[95%] items-center justify-center gap-x-12 mx-auto lg:mx-0">
+          <routerLink to="/login" class="lg:px-10 lg:py-4 bg-[#C12C38] rounded-xl animation_per px-4 py-2 lg:text-xl text-sm">Iniciar sesión</routerLink>
+          <routerLink to="/registro" class="lg:px-10 lg:py-4 border-2 border-[#40BFBC] rounded-xl px-4 py-2 animation_per bg-[#0c0c33] lg:text-xl text-sm">Registrarse</routerLink>
         </div>
       </div>
       <div></div>
