@@ -1,0 +1,5 @@
+# netlify.toml
+
+[build]
+  command = "cd bookflix-app && npm install && npm run build && cd ../backend-bookflix && npm install && npm run dev"
+  publish = "bookflix-app/dist"
