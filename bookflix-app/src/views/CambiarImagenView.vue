@@ -53,12 +53,9 @@ import {mapState} from 'vuex';
             },
             imagen_seleccionada(imagen_sel){
                 if (Object.keys(this.perfilEditando).length !== 0) {
-                    console.log("ahora es del perfil, al modificarlo hara put")
                     this.$store.commit('ACTUALIZAR_IMAGEN_PERFIL', { perfilId: this.perfilEditando.id, nuevaImagen: imagen_sel.imagen });
                     this.$store.commit('GUARDAR_PERFIL_EDITANDO', { ...this.perfilEditando, imagen: imagen_sel.imagen });
                 } else {
-                    console.log("es del nuevo perfil, porque perfilEditando sigue siendo false y te entrará en agregar")
-                    console.log("lo que paso para inicializar el nuevo perfil", {...this.nuevoPerfil, imagen: imagen_sel.imagen})
                     this.$store.commit('INICIALIZAR_PERFIL', { ...this.nuevoPerfil, imagen: imagen_sel.imagen });
                 }
                 this.$router.push({ path: `/editar-perfil/${this.$route.params.id}`, replace: true });

@@ -1,7 +1,5 @@
 import { createStore } from 'vuex'
-// import { imagenes } from './cambio_imagenes.js'
 import { titulos } from './lista_imagenes.js'
-// import { perfiles } from './users.js'
 export default createStore({
   state: {
     responsive: false,

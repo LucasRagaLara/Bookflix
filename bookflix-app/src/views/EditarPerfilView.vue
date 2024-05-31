@@ -68,7 +68,6 @@ import Swal from 'sweetalert2';
             }
             const obtenerPerfilEditando = localStorage.getItem('perfilEditando'); 
 
-
             if (obtenerPerfilEditando && JSON.parse(obtenerPerfilEditando).id) {
                 this.$store.commit('GUARDAR_PERFIL_EDITANDO', JSON.parse(obtenerPerfilEditando));
             }
@@ -83,7 +82,6 @@ import Swal from 'sweetalert2';
             }
             const nuevoPerfil = localStorage.getItem('nuevoPerfil');
             if (nuevoPerfil){
-                console.log(nuevoPerfil)
                 this.$store.commit('INICIALIZAR_PERFIL', JSON.parse(nuevoPerfil))  
             }
 
@@ -91,9 +89,8 @@ import Swal from 'sweetalert2';
                 const idUsuario = this.$route.params.id
                 const comprobarPerfil = this.perfiles.find(usuario => usuario.id == idUsuario);
                 if (comprobarPerfil !== undefined){
-                    console.log("Estoy editando un perfil")
+                    // console.log("Estoy editando un perfil")
                 }else if(this.nuevoPerfil == false){
-                    console.log("Si es false, es que no se ha creado y se crea");
                     this.crearPerfil();
                 }
             };
@@ -165,7 +162,7 @@ import Swal from 'sweetalert2';
                             });
                         }
                     }catch(error){
-                        console.log("Hubo un error al agregar el perfil", error)
+                        console.log("Hubo un error al agregar el perfil", error);
                     }
                 }
             },
