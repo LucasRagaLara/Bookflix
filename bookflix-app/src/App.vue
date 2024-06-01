@@ -204,7 +204,7 @@ export default {
 
     .home{
       background-image: linear-gradient(to right bottom, #252233, #212139, #1e1c2f) !important;
-      background-size: cover;
+      background-size: cover !important;
     }
   // translate modificado del menu responsive
     .lineaActiva1_bar{

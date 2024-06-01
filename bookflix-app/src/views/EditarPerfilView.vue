@@ -1,7 +1,7 @@
 <template>
-    <div class="home w-full min-h-screen items-center flex flex-col xl:pt-28 pt-[15rem]">
+    <div class="home w-full min-h-screen items-center flex flex-col xl:pt-28 pt-28">
 
-        <div class="flex items-center justify-center lg:w-[50%] w-full mx-auto h-[60vh] gap-x-40 flex-col">
+        <div class="flex items-center justify-center lg:w-[50%] w-full mx-auto lg:h-[60vh] gap-x-40 flex-col">
 
             <form class="w-full flex flex-col">
 
@@ -9,7 +9,7 @@
                     <h1 class="text-4xl flex items-start justify-start mt-5 font-bold ">{{ perfilEditando ? 'Editar perfil' : 'Crear nuevo perfil' }}</h1>
                 </div>
 
-                <div class="w-full flex lg:flex-row flex-col items-center justify-center gap-x-10 mb-20">
+                <div class="w-full flex lg:flex-row flex-col items-center justify-center gap-x-10 pb-20">
                     <div class="border border-red-900 h-[15rem] lg:w-[35%] w-[75%] lg:mx-0 mx-auto rounded-lg flex-col flex pt-10 pl-10 lg:mb-0 mb-10">
                         <label for="Nombre" class="font-bold mb-4">Elige tu nombre</label>
                         <input type="text" class="bg-[#802C32] rounded-lg outline-none placeholder:text-[#c1c1c1] border-none pl-4 p-1 w-[80%]" placeholder="Nombre" v-model="nombre" maxlength="20">
@@ -24,24 +24,22 @@
                     </div>
 
                 </div>
-                <div class="flex items-center justify-center lg:w-full gap-x-10 w-[90%] mx-auto">
+                <div class="flex items-center justify-center lg:w-full gap-x-10 w-[90%] mx-auto mb-6 lg:mb-0">
                     <div class="flex items-center justify-center">
-                    <button type="button" class="bg-[#C12C38] py-3 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110 items-center justify-center flex px-12 lg:text-xl text-sm mx-auto lg:mx-0" @click="cancelarEdicionPerfiles">VOLVER</button>
+                        <button type="button" class="bg-[#C12C38] py-3 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110 items-center justify-center flex px-12 lg:text-xl text-sm mx-auto lg:mx-0" @click="cancelarEdicionPerfiles">VOLVER</button>
                     </div>
                     <div class="flex items-center justify-center">
                         <button type="button" class="border-2 border-[#C12C38] py-3 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110 lg:text-xl text-sm mx-auto lg:mx-0" @click="borrarPerfil">BORRAR PERFIL</button>
                     </div>
                 </div>
-
             </form>
 
-        <div class="absolute lg:top-10 lg:right-20 top-5 right-5 flex flex-col items-end justify-end w-full">
-            <button type="button" class="bg-[#C12C38] py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110 items-center justify-center flex px-12" @click="listo">LISTO</button>
-        </div>
+            <div class="absolute lg:top-10 lg:right-20 top-5 right-5 flex flex-col items-end justify-end w-full">
+                <button type="button" class="bg-[#C12C38] py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110 items-center justify-center flex px-12" @click="listo">LISTO</button>
+            </div>
         </div>
 
     </div>
-
 </template>
 
 
@@ -216,12 +214,11 @@ import Swal from 'sweetalert2';
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 .home{
     background: url('../assets/backgrounds/editar_perfil.png');
-    background-repeat: no-repeat;
     background-size: 100% 100vh;
+    background-repeat: no-repeat;
 }
-
 </style>
