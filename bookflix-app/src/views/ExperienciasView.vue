@@ -1,8 +1,8 @@
 <template>
-    <div class="home w-full min-h-screen flex flex-col items-center xl:pt-10 pt-28">
-        <div class="xl:w-[60%] xl:text-center">
-            <h1 class=" xl:text-3xl lg:text-5xl font-bold tracking-wide leading-normal lg:mb-3 lg:mt-0 lg:ml-0 mt-5 ml-4">LEE LO QUE<span class="text-[#E53544]"> NUESTROS USUARIOS</span> TIENEN QUE DECIR </h1>
-            <h1 class=" xl:text-3xl lg:text-5xl font-bold tracking-wide leading-normal lg:mb-3 lg:mt-0 lg:ml-0 mt-5 ml-4">SOBRE SU EXPERIENCIA CON NOSOTROS</h1>
+    <div class="home w-full min-h-screen flex flex-col items-center 2xl:pt-10 md:pt-0 pt-28">
+        <div class="2xl:w-[60%] xl:text-center">
+            <h1 class=" 2xl:text-3xl font-bold tracking-wide leading-normal 2xl:mb-3 2xl:mt-0 2xl:ml-0 md:mt-5 mt-5 ml-4">LEE LO QUE<span class="text-[#E53544]"> NUESTROS USUARIOS</span> TIENEN QUE DECIR </h1>
+            <h1 class=" 2xl:text-3xl font-bold tracking-wide leading-normal 2xl:mb-16 2xl:mt-0 2xl:ml-0 md:mt-2 mt-5 ml-4">SOBRE SU EXPERIENCIA CON NOSOTROS</h1>
         </div>
         <!-- Tarjetas base -->
         <tarjetas></tarjetas>
@@ -50,81 +50,7 @@
         left: 0;
         overflow: hidden;
     }
-
-    // .wave {
-    //     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg') repeat-x; 
-    //     position: absolute;
-    //     top: 0;
-    //     width: 6400px;
-    //     height: 100%;
-    //     animation: wave 5s linear infinite;
-    // }
-
-    // .ocean-red{
-    //     height: 20%;
-    //     width: 100%;
-    //     position: absolute;
-    //     bottom: 0;
-    //     left: 0;
-    //     overflow: hidden;
-    // }
-
-    // .wave-red{
-    //     background: url('../assets/tonos_azulrojo/tarjeta_roja/wave_red.svg') repeat-x;
-    //     position: absolute;
-    //     top: 0;
-    //     width: 6400px;
-    //     height: 100%;
-    //     animation: wave_red 5s linear infinite;
-    // }
-
-    // .ocean-green{
-    //     height: 20%;
-    //     width: 100%;
-    //     position: absolute;
-    //     bottom: 0;
-    //     left: 0;
-    //     overflow: hidden;
-    // }
-
-    // .wave-green{
-    //     background: url('../assets/tonos_azulrojo/tarjeta_verde/wave_green.svg') repeat-x;
-    //     position: absolute;
-    //     top: 0;
-    //     width: 6400px;
-    //     height: 100%;
-    //     animation: wave_green 5s linear infinite;
-    // }
-
-    // @keyframes wave {
-    //     0% {
-    //         transform: translateX(0);
-    //     }
-    //     100% {
-    //         transform: translateX(-1600px);
-    //     }
-    // }
-
-    // @keyframes wave_red {
-    //     0% {
-    //         transform: translateX(0);
-    //     }
-    //     100% {
-    //         transform: translateX(-1600px);
-    //     }
-    // }
-
-    // @keyframes wave_green {
-    //     0% {
-    //         transform: translateX(0);
-    //     }
-    //     100% {
-    //         transform: translateX(-1600px);
-    //     }
-    // }
-
-
-
+    
     .waves {
         position:absolute;
         width: 100%;

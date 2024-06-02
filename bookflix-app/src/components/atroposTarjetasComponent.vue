@@ -1,14 +1,14 @@
 <template>
-    <div class="mt-10 xl:flex-row xl:flex xl:items-center xl:justify-center xl:min-h-[60vh] xl:w-full xl:gap-x-28">
+    <div class="mt-10 2xl:flex-row 2xl:flex 2xl:items-center 2xl:justify-center 2xl:min-h-[60vh] 2xl:w-full 2xl:gap-x-28 md:flex-row md:w-full md:flex md:items-center md:justify-center md:gap-x-10 md:h-[30rem]">
 
-        <div v-if="responsive" class="atropos my-atropos xl:w-full xl:h-[45rem] rounded-xl flex flex-col lg:items-center lg:justify-center bg-[#006470] shadow-xl relative w-[90%] h-[42rem] lg:mx-0 mx-auto lg:mb-0 mb-10">
-            <img src="../assets/tonos_azulrojo/tarjeta_azul/cita_azul.png" alt="" class="w-20 lg:absolute top-5 left-7 lg:ml-0 lg:mt-0 ml-6 my-3">
-            <div class="atropos-scale">
+        <div v-if="responsive" class="atropos my-atropos 2xl:w-full 2xl:h-[45rem] rounded-xl flex md:flex-row md:w-1/3 flex-col 2xl:items-center 2xl:justify-center bg-[#006470] shadow-xl relative w-[90%] h-[42rem] 2xl:mx-0 mx-auto 2xl:mb-0 mb-10 md:h-[10rem]">
+            <img src="../assets/tonos_azulrojo/tarjeta_azul/cita_azul.png" alt="" class="md:w-[2rem] w-20 2xl:absolute top-5 left-7 2xl:ml-0 2xl:mt-0 ml-6 my-3">
+            <div class="atropos-scale ">
                 <!-- rotate container (required) -->    
-                <div class="atropos-rotate">
-                    <div class="atropos-inner">
-                        <div class="items-center justify-center flex">
-                            <p class="text-justify w-[85%] font-bold text-2xl mb-8 atropos-button-wrap" data-atropos-offset="2">¡Una joya escondida! Encontré aquí ediciones digitales de mis libros clásicos favoritos, y la experiencia de lectura es impecable. ¡Gracias por traer la magia de la literatura a mi pantalla!</p>
+                <div class="atropos-rotate ">
+                    <div class="atropos-inner ">
+                        <div class="items-center justify-center flex ">
+                            <p class="text-justify w-[85%] font-bold text-2xl mb-8 atropos-button-wrap 2xl:text-3xl md:text-sm" data-atropos-offset="2">¡Una joya escondida! Encontré aquí ediciones digitales de mis libros clásicos favoritos, y la experiencia de lectura es impecable. ¡Gracias por traer la magia de la literatura a mi pantalla!</p>
                         </div>
 
                         <div class="w-full items-center justify-center flex mb-5">
@@ -43,14 +43,14 @@
         <atropos-component
         activeOffset="100"
         class="atroposElement" v-else>
-            <div class="atropos my-atropos xl:w-full xl:h-[45rem] rounded-xl flex flex-col lg:items-center lg:justify-center bg-[#006470] shadow-xl relative w-[90%] h-[42rem] lg:mx-0 mx-auto lg:mb-0 mb-10">
-                <img src="../assets/tonos_azulrojo/tarjeta_azul/cita_azul.png" alt="" class="w-20 lg:absolute top-5 left-7 lg:ml-0 lg:mt-0 ml-6 my-3">
+            <div class="atropos my-atropos 2xl:w-full 2xl:h-[45rem] rounded-xl flex flex-col 2xl:items-center 2xl:justify-center bg-[#006470] shadow-xl relative w-[90%] h-[42rem] 2xl:mx-0 mx-auto 2xl:mb-0 mb-10 md:h-[30rem]">
+                <img src="../assets/tonos_azulrojo/tarjeta_azul/cita_azul.png" alt="" class="2xl:w-16 md:w-10 w-20 2xl:absolute top-5 left-7 2xl:ml-0 2xl:mt-0 ml-6 my-3">
                 <div class="atropos-scale">
                     <!-- rotate container (required) -->    
                     <div class="atropos-rotate">
                         <div class="atropos-inner">
                             <div class="items-center justify-center flex">
-                                <p class="text-justify w-[85%] font-bold text-2xl mb-8 atropos-button-wrap" data-atropos-offset="2">¡Una joya escondida! Encontré aquí ediciones digitales de mis libros clásicos favoritos, y la experiencia de lectura es impecable. ¡Gracias por traer la magia de la literatura a mi pantalla!</p>
+                                <p class="text-justify w-[85%] font-bold text-2xl mb-8 2xl:text-xl atropos-button-wrap md:text-sm" data-atropos-offset="2">¡Una joya escondida! Encontré aquí ediciones digitales de mis libros clásicos favoritos, y la experiencia de lectura es impecable. ¡Gracias por traer la magia de la literatura a mi pantalla!</p>
                             </div>
 
                             <div class="w-full items-center justify-center flex mb-5">
@@ -83,9 +83,9 @@
             </div>
         </atropos-component>
 
-        <div v-if="responsive" class="atropos my-atropos xl:w-full xl:h-[45rem] rounded-xl flex flex-col lg:items-center lg:justify-center bg-[#531318] shadow-xl relative w-[90%] h-[42rem] lg:mx-0 mx-auto lg:mb-0 mb-10">
+        <div v-if="responsive" class="atropos my-atropos 2xl:w-full 2xl:h-[45rem] rounded-xl flex flex-col 2xl:items-center 2xl:justify-center bg-[#531318] shadow-xl relative w-[90%] h-[42rem] 2xl:mx-0 mx-auto 2xl:mb-0 mb-10">
 
-            <img src="../assets/tonos_azulrojo/tarjeta_roja/cita_roja.png" alt="" class="w-20 lg:absolute top-5 left-7 lg:ml-0 lg:mt-0 ml-6 my-3">
+            <img src="../assets/tonos_azulrojo/tarjeta_roja/cita_roja.png" alt="" class="w-20 2xl:absolute top-5 left-7 2xl:ml-0 2xl:mt-0 ml-6 my-3">
 
             <div class="atropos-scale">
                 <!-- rotate container (required) -->
@@ -128,16 +128,16 @@
         <atropos-component
         activeOffset="100"
         class="atroposElement" v-else>
-            <div class="atropos my-atropos xl:w-full xl:h-[45rem] rounded-xl flex flex-col lg:items-center lg:justify-center bg-[#531318] shadow-xl relative w-[90%] h-[42rem] lg:mx-0 mx-auto lg:mb-0 mb-10">
+            <div class="atropos my-atropos 2xl:w-full 2xl:h-[45rem] rounded-xl flex flex-col 2xl:items-center 2xl:justify-center bg-[#531318] shadow-xl relative w-[90%] h-[42rem] 2xl:mx-0 mx-auto 2xl:mb-0 mb-10 md:h-[30rem]">
 
-                <img src="../assets/tonos_azulrojo/tarjeta_roja/cita_roja.png" alt="" class="w-20 lg:absolute top-5 left-7 lg:ml-0 lg:mt-0 ml-6 my-3">
+                <img src="../assets/tonos_azulrojo/tarjeta_roja/cita_roja.png" alt="" class="2xl:w-16 md:w-10 w-20 2xl:absolute top-5 left-7 2xl:ml-0 2xl:mt-0 ml-6 my-3">
 
                 <div class="atropos-scale">
                     <!-- rotate container (required) -->
                     <div class="atropos-rotate">
                         <div class="atropos-inner">
                             <div class="items-center justify-center flex">
-                                <p class="text-justify w-[85%] font-bold text-2xl mb-8" data-atropos-offset="2">Esta plataforma ha sido mi salvación para acceder a libros para mis estudios. La selección es amplia y la posibilidad de leer en cualquier momento y lugar ha hecho mi vida mucho más fácil.</p>
+                                <p class="text-justify w-[85%] font-bold text-2xl mb-8 2xl:text-xl md:text-sm" data-atropos-offset="2">Esta plataforma ha sido mi salvación para acceder a libros para mis estudios. La selección es amplia y la posibilidad de leer en cualquier momento y lugar ha hecho mi vida mucho más fácil.</p>
                             </div>
                             <!-- <div class="ocean">
                                 <div class="wave"></div>
@@ -173,9 +173,9 @@
         </atropos-component>
 
 
-        <div v-if="responsive" class="atropos my-atropos xl:w-full xl:h-[45rem] rounded-xl flex flex-col lg:items-center lg:justify-center bg-[#07372D] shadow-xl relative w-[90%] h-[42rem] lg:mx-0 mx-auto lg:mb-0 mb-10">
+        <div v-if="responsive" class="atropos my-atropos 2xl:w-full 2xl:h-[45rem] rounded-xl flex flex-col 2xl:items-center 2xl:justify-center bg-[#07372D] shadow-xl relative w-[90%] h-[42rem] 2xl:mx-0 mx-auto 2xl:mb-0 mb-10">
 
-            <img src="../assets/tonos_azulrojo/tarjeta_verde/cita_verde.png" alt="" class="w-20 lg:absolute top-5 left-7 lg:ml-0 lg:mt-0 ml-6 my-3" data-atropos-offset="2">
+            <img src="../assets/tonos_azulrojo/tarjeta_verde/cita_verde.png" alt="" class="w-20 2xl:absolute top-5 left-7 2xl:ml-0 2xl:mt-0 ml-6 my-3" data-atropos-offset="2">
 
             <div class="atropos-scale">
                 <!-- rotate container (required) -->
@@ -183,7 +183,7 @@
                     <div class="atropos-inner">
 
                         <div class="items-center justify-center flex">
-                            <p class="text-justify w-[85%] font-bold text-2xl lg:mb-8 mb-10" data-atropos-offset="2">Como lector, he encontrado aquí una fuente interminable de aventuras futuristas. Las recomendaciones siempre dan en el clavo y cada lectura es una experiencia emocionante.</p>
+                            <p class="text-justify w-[85%] font-bold text-2xl 2xl:mb-8 mb-10 md:text-sm" data-atropos-offset="2">Como lector, he encontrado aquí una fuente interminable de aventuras futuristas. Las recomendaciones siempre dan en el clavo y cada lectura es una experiencia emocionante.</p>
                         </div>
                         <!-- <div class="ocean">
                             <div class="wave"></div>
@@ -221,15 +221,15 @@
         <atropos-component
         activeOffset="100"
         class="atroposElement" v-else>
-            <div class="atropos my-atropos xl:w-full xl:h-[45rem] rounded-xl flex flex-col lg:items-center lg:justify-center bg-[#07372D] shadow-xl relative w-[90%] h-[42rem] lg:mx-0 mx-auto lg:mb-0 mb-10">
-                <img src="../assets/tonos_azulrojo/tarjeta_verde/cita_verde.png" alt="" class="w-20 lg:absolute top-5 left-7 lg:ml-0 lg:mt-0 ml-6 my-3" data-atropos-offset="2">
+            <div class="atropos my-atropos 2xl:w-full 2xl:h-[45rem] rounded-xl flex flex-col 2xl:items-center 2xl:justify-center bg-[#07372D] shadow-xl relative w-[90%] h-[42rem] 2xl:mx-0 mx-auto 2xl:mb-0 mb-10 md:h-[30rem]">
+                <img src="../assets/tonos_azulrojo/tarjeta_verde/cita_verde.png" alt="" class=" 2xl:w-16 md:w-10 w-20 2xl:absolute top-5 left-7 2xl:ml-0 2xl:mt-0 ml-6 my-3" data-atropos-offset="2">
                 <div class="atropos-scale">
                     <!-- rotate container (required) -->
                     <div class="atropos-rotate">
                         <div class="atropos-inner">
 
                             <div class="items-center justify-center flex">
-                                <p class="text-justify w-[85%] font-bold text-2xl lg:mb-8 mb-10" data-atropos-offset="2">Como lector, he encontrado aquí una fuente interminable de aventuras futuristas. Las recomendaciones siempre dan en el clavo y cada lectura es una experiencia emocionante.</p>
+                                <p class="text-justify w-[85%] font-bold text-2xl 2xl:mb-8 mb-10 2xl:text-xl md:text-sm" data-atropos-offset="2">Como lector, he encontrado aquí una fuente interminable de aventuras futuristas. Las recomendaciones siempre dan en el clavo y cada lectura es una experiencia emocionante.</p>
                             </div>
                             <!-- <div class="ocean">
                                 <div class="wave"></div>
@@ -381,7 +381,14 @@ export default {
     }
     }
 
+    @media(max-width: 1500px){
+        atropos-component{
+        width: 28%;
+        }
+    }
+
     @media (max-width: 768px) {
+
     .waves {
         height:40px;
         min-height:40px;

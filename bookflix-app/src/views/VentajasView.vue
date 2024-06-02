@@ -1,5 +1,5 @@
 <template>
-    <div class="home w-full min-h-screen flex flex-col items-center xl:pt-12 pt-28">
+    <div class="home w-full min-h-screen flex flex-col items-center 2xl:pt-12 pt-28 md:pt-0">
       <items-component></items-component>
     </div>
 </template> 
@@ -32,7 +32,7 @@
   .home {
     background-image: url('../assets/backgrounds/ventajas_background.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100vh;
     background-attachment: scroll !important;
   }
 </style>

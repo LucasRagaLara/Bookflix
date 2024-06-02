@@ -3,7 +3,7 @@
         <!-- Menú con el logo -->    
     <nav class="lg:text-2xl lg:flex lg:items-center lg:w-full lg:justify-start flex items-center w-full justify-start absolute">
       <div class="lg:w-full lg:mt-10 lg:ml-10 w-full mt-5 ml-5">
-        <img src="./assets/icons/bookflix_azulrojo.png" alt="" class="lg:w-[10rem] w-[6rem] cursor-pointer" @click="ir_inicio">
+        <img src="./assets/icons/bookflix_azulrojo.png" alt="" class="2xl:w-[10rem] w-[6rem] cursor-pointer" @click="ir_inicio">
       </div>  
       <div class="menu z-10" @click="abrir_menu"  v-if="!esRutaExcluida">
         <span class="linea_bar" ref="lineaActiva1_bar"></span>
@@ -16,11 +16,11 @@
             <div class="bg-red-500 h-screen lg:w-[25rem] absolute right-0 top-0 z-[5] opacity-90 animate__animated shadow-custom w-full" v-if="estadoMenu">
               <div class="h-32"></div>
               <ul class="flex items-start justify-center flex-col ml-12 gap-y-8 font-bold w-full">
-                <li class="relative link_animation"> <RouterLink to="/" @click="abrir_menu">INICIO</RouterLink> </li>
-                <li class="relative link_animation"> <RouterLink to="/descubre" @click="abrir_menu">DESCUBRE</RouterLink> </li>
-                <li class="relative link_animation"> <RouterLink to="/ventajas" @click="abrir_menu">VENTAJAS</RouterLink></li>
-                <li class="relative link_animation"> <RouterLink to="/experiencias" @click="abrir_menu">EXPERIENCIAS</RouterLink></li>
-                <li class="relative link_animation"> <RouterLink to="/contacto" @click="abrir_menu">CONTACTO</RouterLink></li>
+                <li class="relative link_animation md:text-lg"> <RouterLink to="/" @click="abrir_menu">INICIO</RouterLink> </li>
+                <li class="relative link_animation md:text-lg"> <RouterLink to="/descubre" @click="abrir_menu">DESCUBRE</RouterLink> </li>
+                <li class="relative link_animation md:text-lg"> <RouterLink to="/ventajas" @click="abrir_menu">VENTAJAS</RouterLink></li>
+                <li class="relative link_animation md:text-lg"> <RouterLink to="/experiencias" @click="abrir_menu">EXPERIENCIAS</RouterLink></li>
+                <li class="relative link_animation md:text-lg"> <RouterLink to="/contacto" @click="abrir_menu">CONTACTO</RouterLink></li>
               </ul>
             </div>
         </transition>
@@ -204,7 +204,7 @@ export default {
 
     .home{
       background-image: linear-gradient(to right bottom, #252233, #212139, #1e1c2f) !important;
-      background-size: cover;
+      background-size: cover !important;
     }
   // translate modificado del menu responsive
     .lineaActiva1_bar{
