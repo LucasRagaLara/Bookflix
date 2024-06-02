@@ -1,24 +1,24 @@
 <template>
-    <div class="home w-full min-h-screen flex flex-col items-center xl:pt-20 pt-24">
+    <div class="home w-full min-h-screen flex flex-col items-center 2xl:pt-20 md:pt-0 pt-24">
 
         <form @submit.prevent="changePass" class="flex flex-col lg:w-[40%] w-[90%] justify-center items-center mt-10">
             <div class="flex flex-col mb-6 items-center justify-center w-[95%] mx-auto">
                 <img src="../assets/icons/forgotten.png" alt="" class="w-[128px]">
             </div>
             <div  class="w-[95%] mx-auto flex flex-col items-center justify-center">
-                <h1 class="xl:text-4xl text-center tracking-wider leading-normal font-bold text-3xl my-5 w-full">
+                <h1 class="2xl:text-4xl md:text-xl text-center tracking-wider leading-normal font-bold text-3xl my-5 w-full">
                     ¿CAMBIANDO LA CONTRASEÑA?
                 </h1>
-                <h3 class="xl:text-2xl text-center tracking-wider leading-normal font-bold text-xl w-full mb-12">
+                <h3 class="2xl:text-4xl md:text-xl estext-center tracking-wider leading-normal font-bold text-xl w-full mb-12">
                     No te preocupes, si se te vuelve a olvidar siempre puedes solicitar otra
                 </h3>
             </div>
             <div class="flex flex-col mb-12 w-full items-center justify-center">
-                <label for="password" class="text-2xl text-[#E53544] font-bold mb-6 lg:w-[75%] w-[95%]">PASSWORD</label>
-                <input type="text" placeholder="Introduce tu nueva contraseña" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[75%] text-[#9ca3af] input-custom w-[95%]" required minlength="3" maxlength="45" v-model="password">
+                <label for="password" class="text-2xl 2xl:text-2xl md:text-sm text-[#E53544] font-bold mb-6 lg:w-[75%] w-[95%]">PASSWORD</label>
+                <input type="text" placeholder="Introduce tu nueva contraseña" class="text-2xl 2xl:text-2xl md:text-sm bg-transparent border-b-4 border-[#C7C7C7] lg:w-[75%] text-[#9ca3af] input-custom w-[95%]" required minlength="3" maxlength="45" v-model="password">
             </div>
 
-            <button type="submit" class="items-center justify-center flex border-red-500 bg-[#C12C38] px-6 lg:py-4 py-4 xl:mt-6 xl:mb-0 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-110 font-bold mt-8 mb-8 xl:mx-0 mx-auto boton-registro lg:text-[1.1rem]">Cambiar contraseña</button>
+            <button type="submit" class="items-center justify-center flex border-red-500 bg-[#C12C38] px-6 lg:py-4 py-4 xl:mt-6 xl:mb-0 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-110 font-bold mt-8 mb-8 xl:mx-0 mx-auto boton-registro lg:text-[1.1rem] text-2xl 2xl:text-2xl md:text-sm ">Cambiar contraseña</button>
 
         </form>
     </div>

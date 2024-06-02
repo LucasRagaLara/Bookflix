@@ -1,19 +1,19 @@
 <template>
 
-    <div class="home w-full min-h-screen items-center flex flex-col xl:pt-28 pt-28">
-        <h1 class="lg:text-5xl font-bold tracking-wide leading-normal lg:mb-3 lg:mt-0 lg:ml-0 mt-5 ml-4 mb-20">¡Selecciona tu usuario!</h1>
+    <div class="home w-full min-h-screen items-center flex flex-col 2xl:pt-28 md:pt-20 pt-28">
+        <h1 class="2xl:text-5xl font-bold tracking-wide leading-normal lg:mb-3 lg:mt-0 lg:ml-0 mt-5 ml-4 mb-20">¡Selecciona tu usuario!</h1>
         <div class="flex lg:items-end justify-center w-[75%] mx-auto lg:h-[35vh] lg:gap-x-40 lg:flex-row flex-col items-center lg:gap-y-0 gap-y-10">
 
             <div class="flex lg:items-center lg:justify-center flex-col lg:flex-wrap">
-                <div class="bg-[#C12C38] flex items-center justify-center w-[10rem] h-[10rem] rounded-full transition-all duration-300 ease-in-out transform hover:scale-110 cursor-pointer">
-                    <i class="fa-solid fa-plus text-[5rem]" @click="nuevoPerfil()"></i>
+                <div class="bg-[#C12C38] flex items-center justify-center w-[10rem] h-[10rem] 2xl:w-[10rem] 2xl:h-[10rem] md:h-[6rem] md:w-[6rem] rounded-full transition-all duration-300 ease-in-out transform hover:scale-110 cursor-pointer">
+                    <i class="fa-solid fa-plus 2xl:text-[5rem] text-[5rem] md:text-[3rem]" @click="nuevoPerfil()"></i>
                 </div>
-                <h1 class="text-2xl flex items-center justify-center mt-5 font-bold ">Crear perfil</h1>
+                <h1 class="2xl:text-2xl text-2xl md:text-lg flex items-center justify-center mt-5 font-bold ">Crear perfil</h1>
             </div>
             <div class="flex items-center justify-center flex-col" v-for="perfil of perfiles" :key="perfil">
-                <div class="flex items-center justify-center w-[10rem] h-[10rem] rounded-full relative">
+                <div class="flex items-center justify-center w-[10rem] h-[10rem] 2xl:w-[10rem] 2xl:h-[10rem] md:h-[6rem] md:w-[6rem]  rounded-full relative">
                     <img :src="perfil.imagen" alt="" :class="{'edicion_perfil': edicion}" class="transition-all duration-300 ease-in-out transform hover:scale-110 cursor-pointer">
-                    <img src="../assets/icons/pencil_edit.png" alt="" class="absolute top-[35%] left-[35%] w-[3.5rem] h-[3.5rem] cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110" v-if="edicion" @click="editarPerfil(perfil)">
+                    <img src="../assets/icons/pencil_edit.png" alt="" class="absolute top-[35%] left-[35%] 2xl:w-[3.5rem] md:w-[2rem] 2xl:h-[3.5rem] md:h-[2rem] md: w-[3.5rem] h-[3.5rem] cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110" v-if="edicion" @click="editarPerfil(perfil)">
                 </div>
                 <h1 class="text-2xl flex items-center justify-center mt-5 font-bold ">{{perfil.nombre}}</h1>
             </div>
@@ -21,11 +21,11 @@
         </div>
         <div class="flex items-center justify-center w-full lg:h-[25rem] lg:mb-0 lg:mt-0 mt-12 mb-12">
 
-            <button @click="administrarPerfiles()" class="bg-[#C12C38] py-3 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110" v-if="administrarEstado">
+            <button @click="administrarPerfiles()" class="bg-[#C12C38] 2xl:py-3 py-3 px-5 md:py-2 md:px-2 2xl:text-2xl md:text-sm 2xl:px-5 py-3 px-5 md:py-2 md:px-2 2xl:text-2xl md:text-sm rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110" v-if="administrarEstado">
                 Administrar perfiles
             </button>
 
-            <button @click="cancelarEdicionPerfiles()" class="bg-[#C12C38] py-3 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110" v-else>
+            <button @click="cancelarEdicionPerfiles()" class="bg-[#C12C38] 2xl:py-3 py-3 px-5 md:py-2 md:px-2 2xl:text-2xl md:text-sm 2xl:px-5 py-3 px-5 md:py-2 md:px-2 2xl:text-2xl md:text-sm rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110" v-else>
                 Cancelar
             </button>
 
