@@ -13,7 +13,7 @@
             <div class="flex items-center justify-center flex-col" v-for="perfil of perfiles" :key="perfil">
                 <div class="flex items-center justify-center w-[10rem] h-[10rem] 2xl:w-[10rem] 2xl:h-[10rem] md:h-[6rem] md:w-[6rem]  rounded-full relative">
                     <img :src="perfil.imagen" alt="" :class="{'edicion_perfil': edicion}" class="transition-all duration-300 ease-in-out transform hover:scale-110 cursor-pointer">
-                    <img src="../assets/icons/pencil_edit.png" alt="" class="absolute top-[35%] left-[35%] w-[3.5rem] h-[3.5rem] cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110" v-if="edicion" @click="editarPerfil(perfil)">
+                    <img src="../assets/icons/pencil_edit.png" alt="" class="absolute top-[35%] left-[35%] 2xl:w-[3.5rem] md:w-[2rem] 2xl:h-[3.5rem] md:h-[2rem] md: w-[3.5rem] h-[3.5rem] cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110" v-if="edicion" @click="editarPerfil(perfil)">
                 </div>
                 <h1 class="text-2xl flex items-center justify-center mt-5 font-bold ">{{perfil.nombre}}</h1>
             </div>
