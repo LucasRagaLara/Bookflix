@@ -1,18 +1,18 @@
 <template>
-  <div class="home w-full lg:min-h-screen lg:pt-28 md:pt-36 pt-12">
+  <div class="home w-full 2xl:min-h-screen lg:min-h-screen 2xl:pt-28 lg:pt-0 md:pt-36 pt-12">
     <!-- Menú con el logo -->
     <div class="flex w-[60%] absolute right-0 top-0">
       <particlesComponent />
     </div>
     <!-- Introducción y fondo de la página -->
-    <div class="lg:justify-start lg:w-full lg:h-[40rem] h-screen items-center justify-center flex relative z-3">
-      <div class="lg:w-[50%] flex flex-col items-center justify-center w-[95%]">
-        <h1 class="lg:text-5xl lg:mb-12 text-center font-bold tracking-wider leading-normal text-3xl mb-20">¡BIENVENIDO A TU MUNDO DE HISTORIAS SIN FIN!</h1>
-        <p class="lg:text-2xl lg:text-center lg:mb-2 tracking-wider leading-normal text-justify w-[90%] mx-auto mb-10"><strong>Descubre</strong> un mundo de lecturas en línea.</p>
-        <p class="lg:text-2xl lg:text-center tracking-wider leading-normal text-justify w-[90%] mx-auto mb-5"><strong>Explora</strong>, lee y repite: Tu viaje literario te espera.</p>
-        <div class="lg:gap-x-28 flex mt-5 lg:h-28 lg:w-full w-[95%] items-center justify-center gap-x-12 mx-auto lg:mx-0 lg:mb-0">
-          <routerLink to="/login" class="lg:px-10 lg:py-4 bg-[#C12C38] rounded-xl animation_per px-4 py-2 lg:text-xl text-sm">Iniciar sesión</routerLink>
-          <routerLink to="/registro" class="lg:px-10 lg:py-4 border-2 border-[#40BFBC] rounded-xl px-4 py-2 animation_per bg-[#0c0c33] lg:text-xl text-sm">Registrarse</routerLink>
+    <div class="2xl:justify-start 2xl:w-full 2xl:h-[45rem] lg:h-[37rem] lg:w-[50%] lg:pb-12 h-screen items-center justify-center flex relative z-3">
+      <div class="2xl:w-[45%] lg:w-[90%] flex flex-col items-center justify-center w-[95%] lg:items-center">
+        <h1 class="2xl:text-5xl 2xl:mb-12 lg:mb-4 text-center font-bold tracking-wider leading-normal text-3xl mb-20">¡BIENVENIDO A TU MUNDO DE HISTORIAS SIN FIN!</h1>
+        <p class="2xl:text-2xl 2xl:text-center 2xl:mb-2 lg:mb-4 lg:text-lg tracking-wider leading-normal text-justify w-[90%] mx-auto mb-10"><strong>Descubre</strong> un mundo de lecturas en línea.</p>
+        <p class="2xl:text-2xl 2xl:text-center lg:text-lg tracking-wider leading-normal text-justify w-[90%] mx-auto mb-5"><strong>Explora</strong>, lee y repite: Tu viaje literario te espera.</p>
+        <div class="2xl:gap-x-28 flex mt-5 2xl:h-28 2xl:w-full w-[95%] items-center justify-center gap-x-12 mx-auto 2xl:mx-0 2xl:mb-0">
+          <routerLink to="/login" class="2xl:px-10 2xl:py-4 bg-[#C12C38] rounded-xl animation_per px-4 py-2 2xl:text-xl text-sm">Iniciar sesión</routerLink>
+          <routerLink to="/registro" class="2xl:px-10 2xl:py-4 border-2 border-[#40BFBC] rounded-xl px-4 py-2 animation_per bg-[#0c0c33] 2xl:text-xl text-sm">Registrarse</routerLink>
         </div>
       </div>
       <div></div>
@@ -38,7 +38,7 @@ export default defineComponent({
 .home {
   background: url('../assets/backgrounds/home.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100vh;
 }
 // Animaciones para los botones
 .animation_per {

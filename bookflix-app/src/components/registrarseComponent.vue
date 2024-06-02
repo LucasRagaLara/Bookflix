@@ -8,44 +8,44 @@
                 </h1>
             </div>
             <!-- Si no es responsive -->
-            <div class="lg:w-[35%] lg:h-[50rem] border-4 border-r-0 rounded-l-xl border-[#40BFBC] shadow-lg shadow-left shadow-top shadow-bottom shadow-[#40BFBC] bg-[#212139] w-[90%] lg:mx-0 mx-auto"
+            <div class="lg:w-[35%] 2xl:h-[50rem] md:h-[32rem] border-4 border-r-0 rounded-l-xl border-[#40BFBC] shadow-lg shadow-left shadow-top shadow-bottom shadow-[#40BFBC] bg-[#212139] w-[90%] lg:mx-0 mx-auto"
             v-else>
                 <div>
-                    <img src="../assets/icons/bookmark.png" alt="" class="w-[64px] ml-12 mb-5">
+                    <img src="../assets/icons/bookmark.png" alt="" class="2xl:w-[64px] md:w-[32px] ml-12 mb-5">
                 </div>
-                <h1 class="lg:text-4xl text-center tracking-wider leading-normal font-bold pt-4 text-3xl lg:mb-6 mb-6 ">
+                <h1 class="2xl:text-4xl md:text-lg text-center tracking-wider leading-normal font-bold pt-4 text-3xl lg:mb-6 mb-6 ">
                     ¡Registrate <span class="text-[#E53544]">gratis</span> y explora todo nuestro contenido!
                 </h1>
 
                 <div class="items-center justify-center flex flex-col  xl:mt-4 w-full">
-                    <img src="../assets/backgrounds/muchos_libros.png" alt="" class="lg:w-[80%]">
+                    <img src="../assets/backgrounds/muchos_libros.png" alt="" class="2xl:w-[75%] md:w-[60%]">
                 </div>
             </div>
             <!-- Rutas login-Registro -->
-            <div class="lg:w-[35%] lg:min-h-[50rem] lg:bg-[#f1f1f1] rounded-r-xl lg:pl-12 pl-4 w-[90%] mx-auto lg:m-0 lg:border-4 lg:border-l-0 lg:shadow-lg lg:shadow-right lg:shadow-top lg:shadow-bottom lg:shadow-[#40BFBC] lg:border-[#40BFBC]">
-                <div class="flex flex-row lg:items-end lg:justify-end pt-6 lg:pr-6 items-center justify-center">
-                    <routerLink to="/login"  class="rounded-l-2xl px-5 py-3 text-[#fff] bg-[#C12C38] text-lg lg:w-[25%] text-center transition duration-300 hover:bg-red-900 font-bold botones-middle">Login</routerLink>
-                    <routerLink to="/registro" class="rounded-r-2xl px-5 py-3 text-[#fff] bg-[#CD5D66] text-lg lg:w-[25%] text-center font-bold cursor-default w-[50%] botones-middle cursor-pointer">Registrarse</routerLink>
+            <div class="lg:w-[35%] 2xl:min-h-[50rem] md:h-[32rem] lg:bg-[#f1f1f1] rounded-r-xl lg:pl-12 pl-4 w-[90%] mx-auto lg:m-0 lg:border-4 lg:border-l-0 lg:shadow-lg lg:shadow-right lg:shadow-top lg:shadow-bottom lg:shadow-[#40BFBC] lg:border-[#40BFBC]">
+                <div class="flex flex-row 2xl:items-end 2xl:justify-end pt-6 lg:pr-6 items-center justify-center">
+                    <routerLink to="/login"  class="rounded-l-2xl px-5 py-3 text-[#fff] bg-[#C12C38] 2xl:text-lg md:text-sm text-lg 2xl:w-[25%] text-center transition duration-300 hover:bg-red-900 font-bold botones-middle">Login</routerLink>
+                    <routerLink to="/registro" class="rounded-r-2xl px-5 py-3 text-[#fff] bg-[#CD5D66] 2xl:text-lg md:text-sm text-lg 2xl:w-[25%] text-center font-bold cursor-default w-[50%] botones-middle cursor-pointer">Registrarse</routerLink>
                 </div>  
                 <!-- Formulario de registro -->
-                <form @submit.prevent="registrarse" class="lg:mt-6 flex flex-col lg:w-[75%] w-[90%] lg:h-[40rem] lg:ml-10 justify-center mt-10">
+                <form @submit.prevent="registrarse" class="2xl:mt-6 flex flex-col lg:w-[75%] w-[90%] 2xl:h-[40rem] md:h-[28rem] lg:ml-10 justify-center mt-10 md:mt-0">
                     
-                    <div class="flex flex-col mb-12">
-                        <label for="nombre" class="text-2xl text-[#E53544] font-bold mb-6">NOMBRE</label>
-                        <input type="text" placeholder="Introduce tu nombre" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" v-model="nombre" required minlength="3" maxlength="45">
+                    <div class="flex flex-col mb-12 2xl:mb-12 md:mb-4">
+                        <label for="nombre" class="2xl:text-2xl md:text-sm text-[#E53544] font-bold 2xl:mb-6 md:mb-2 mb-6">NOMBRE</label>
+                        <input type="text" placeholder="Introduce tu nombre" class="2xl:text-2xl md:text-sm bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" v-model="nombre" required minlength="3" maxlength="45">
                     </div>
 
-                    <div class="flex flex-col mb-12">
-                        <label for="email" class="text-2xl text-[#E53544] font-bold mb-6">E-MAIL</label>
-                        <input type="email" placeholder="Introduce tu e-mail" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" v-model="email" required minlength="3" maxlength="45">
+                    <div class="flex flex-col mb-12 md:mb-4 2xl:mb-12">
+                        <label for="email" class="2xl:text-2xl md:text-sm text-[#E53544] 2xl:mb-6 md:mb-2 font-bold mb-6">E-MAIL</label>
+                        <input type="email" placeholder="Introduce tu e-mail" class="2xl:text-2xl md:text-sm bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" v-model="email" required minlength="3" maxlength="45">
                     </div>
 
-                    <div class="flex flex-col mb-12">
-                        <label for="password" class="text-2xl text-[#E53544] font-bold mb-6">PASSWORD</label>
-                        <input type="password" placeholder="Introduce la contraseña" class="bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" v-model="password" required minlength="3" maxlength="45">
+                    <div class="flex flex-col mb-12 md:mb-4 2xl:mb-12">
+                        <label for="password" class="2xl:text-2xl md:text-sm text-[#E53544] 2xl:mb-6 md:mb-2 font-bold mb-6">PASSWORD</label>
+                        <input type="password" placeholder="Introduce la contraseña" class="2xl:text-2xl md:text-sm bg-transparent border-b-4 border-[#C7C7C7] lg:w-[85%] text-[#9ca3af] input-custom w-[95%]" v-model="password" required minlength="3" maxlength="45">
                     </div>
 
-                    <div class="flex items-center gap-x-3 w-full lg:text-2xl text-[1rem] lg:mb-0 mb-5">
+                    <div class="flex items-center gap-x-3 w-full 2xl:text-2xl text-[1rem] lg:mb-0 mb-5">
                         <input type="checkbox" name="terminos" class="border-none bg-[#c7c7c7] checkbox-custom" v-model="isChecked" required>
                         <p class="lg:text-[#222] text-[#fff]" >
                             He leido y acepto los 
@@ -53,7 +53,7 @@
                         </p>
                     </div>
 
-                    <button type="submit" class="xl:w-[45%] border-red-500 bg-[#C12C38] py-4 xl:mt-12 xl:mb-0 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-110 font-bold w-[60%] mt-8 mb-8 xl:mx-0 mx-auto boton-registro">Registrarse</button>
+                    <button type="submit" class="xl:w-[45%] border-red-500 bg-[#C12C38] 2xl:py-4 md:py-2 2xl:mt-12 xl:mb-0 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-110 font-bold w-[60%] mt-8 mb-8 xl:mx-0 mx-auto boton-registro 2xl:text-2xl md:text-sm ">Registrarse</button>
 
                 </form>
             </div>
@@ -237,7 +237,7 @@
 
     @media (max-width: 1750px){
         .boton-registro{
-            width: 95%;
+            width: 50%;
         }
         .botones-middle{
             width: 45%;

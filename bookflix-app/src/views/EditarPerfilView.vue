@@ -10,12 +10,12 @@
                 </div>
 
                 <div class="w-full flex lg:flex-row flex-col items-center justify-center gap-x-10 pb-20">
-                    <div class="border border-red-900 h-[15rem] lg:w-[35%] w-[75%] lg:mx-0 mx-auto rounded-lg flex-col flex pt-10 pl-10 lg:mb-0 mb-10">
+                    <div class="border border-red-900 h-[15rem] 2xl:w-[35%] md:w-[50%] w-[75%] lg:mx-0 mx-auto rounded-lg flex-col flex pt-10 pl-10 lg:mb-0 mb-10">
                         <label for="Nombre" class="font-bold mb-4">Elige tu nombre</label>
                         <input type="text" class="bg-[#802C32] rounded-lg outline-none placeholder:text-[#c1c1c1] border-none pl-4 p-1 w-[80%]" placeholder="Nombre" v-model="nombre" maxlength="20">
                     </div>
 
-                    <div class="lg:w-[20%] w-[60%] flex items-center justify-center relative">
+                    <div class="2xl:w-[20%] md:w-[30%] w-[60%] flex items-center justify-center relative">
                         <img :src="Object.keys(perfilEditando).length === 0 ? nuevoPerfil.imagen : perfilEditando.imagen" alt="" ref="imagenSeleccionada">
                         <div class="w-[3.5rem] h-[3.5rem] items-center justify-center bg-[#C12C38] flex absolute bottom-0 right-7 rounded-full p-2 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-110 hover:text-[#c12c38] hover:bg-[#f1f1f1] text-[#f1f1f1]">
                             <i class="fa-solid fa-pencil text-3xl" @click="seleccionarImagen()"></i>
@@ -26,10 +26,10 @@
                 </div>
                 <div class="flex items-center justify-center lg:w-full gap-x-10 w-[90%] mx-auto mb-6 lg:mb-0">
                     <div class="flex items-center justify-center">
-                        <button type="button" class="bg-[#C12C38] py-3 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110 items-center justify-center flex px-12 lg:text-xl text-sm mx-auto lg:mx-0" @click="cancelarEdicionPerfiles">VOLVER</button>
+                        <button type="button" class="bg-[#C12C38] py-3 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110 items-center justify-center flex px-12 2xl:text-xl md:text-sm text-sm mx-auto lg:mx-0" @click="cancelarEdicionPerfiles">VOLVER</button>
                     </div>
                     <div class="flex items-center justify-center">
-                        <button type="button" class="border-2 border-[#C12C38] py-3 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110 lg:text-xl text-sm mx-auto lg:mx-0" @click="borrarPerfil">BORRAR PERFIL</button>
+                        <button type="button" class="border-2 border-[#C12C38] py-3 px-5 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110 2xl:text-xl md:text-sm text-sm mx-auto lg:mx-0 2xl:text-[#fff] md:text-[#222]" @click="borrarPerfil">BORRAR PERFIL</button>
                     </div>
                 </div>
             </form>
